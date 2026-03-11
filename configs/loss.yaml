@@ -1,0 +1,9 @@
+loss:
+  # Mass adversary (binned classification within [115, 135])
+  mass_adversary:
+    enabled: true
+    # Candidate K values; code selects the largest K such that each bin has >= min_bin_count (train-only).
+    candidate_K: [6, 8, 10, 12, 15]
+    min_bin_count: 500
+    lambda_max: 0.5
+    warmup_epochs: 5

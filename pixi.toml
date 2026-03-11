@@ -1,0 +1,23 @@
+[workspace]
+authors = ["Shinnkuo <xyzxyz6886@gmail.com>"]
+name = "hmumu-transformer"
+channels = ["conda-forge", "pytorch"]
+platforms = ["linux-64"]
+
+[dependencies]
+python = "3.10.*"
+numpy = "*"
+pyarrow = "*"
+pandas = "*"
+matplotlib = "*"
+scikit-learn = "*"
+pyyaml = "*"
+pytorch = "*"
+pip = ">=26.0.1,<27"
+
+# Note: user environment reports torch==2.1.0; adjust as needed.
+# CUDA is not constrained here.
+
+[tasks]
+train = "python -m scripts.train --config configs/experiment.yaml"
+evaluate = "python -m scripts.evaluate --run-dir runs/latest"

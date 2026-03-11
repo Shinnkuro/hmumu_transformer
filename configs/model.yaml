@@ -1,0 +1,18 @@
+model:
+  d_model: 192
+  n_layers: 5
+  n_heads: 6
+  dropout: 0.1
+
+  # Pairwise feature dimension:
+  # [deta, sin_dphi, cos_dphi, log_dR, log_pt_ratio, log_mij_jetjet]
+  pairwise_dim: 6
+  pairwise_hidden: 64
+
+  classifier_head:
+    hidden: 128
+    dropout: 0.1
+
+  adversary_head:
+    hidden: 128
+    dropout: 0.1

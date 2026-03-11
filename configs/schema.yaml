@@ -1,0 +1,24 @@
+schema:
+  n_tokens: 7
+  max_jets: 4
+
+  # Token order: [CLS], mu1, mu2, jet1..jet4
+  token_types: ["CLS", "MUON", "MUON", "JET", "JET", "JET", "JET"]
+
+  # v is (pt, eta, phi, mass)
+  v_fields:
+    CLS: [null, null, null, null]
+    MUON1: [mu1_pt, mu1_eta, mu1_phi, mu1_mass]
+    MUON2: [mu2_pt, mu2_eta, mu2_phi, mu2_mass]
+    JET1:  [jet1_pt_nominal, jet1_eta_nominal, jet1_phi_nominal, jet1_mass_nominal]
+    JET2:  [jet2_pt_nominal, jet2_eta_nominal, jet2_phi_nominal, jet2_mass_nominal]
+    JET3:  [jet3_pt_nominal, jet3_eta_nominal, jet3_phi_nominal, jet3_mass_nominal]
+    JET4:  [jet4_pt_nominal, jet4_eta_nominal, jet4_phi_nominal, jet4_mass_nominal]
+
+  # x schema (F=16). Unused/reserved dims are filled with zeros.
+  # Indices:
+  # 0 log(pt), 1 eta, 2 sin(phi), 3 cos(phi), 4 log(mass)
+  # 5 mu_mass_log (optional; we fill log(mu_mass)), 6 reserved, 7 reserved
+  # 8 jet_qgl, 9 reserved, 10 reserved
+  # 11 log(MET_pt), 12 sin(MET_phi), 13 cos(MET_phi), 14 njets, 15 dimuon_pt_log
+  x_dim: 16

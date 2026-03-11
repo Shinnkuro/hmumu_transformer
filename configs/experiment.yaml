@@ -1,0 +1,7 @@
+# Single-file experiment config that includes everything.
+includes:
+  - data.yaml
+  - schema.yaml
+  - model.yaml
+  - train.yaml
+  - loss.yaml

@@ -1,0 +1,28 @@
+train:
+  device: auto  # "cuda" or "cpu" or "auto"
+  num_epochs: 50
+  lr: 3.0e-4
+  weight_decay: 0.01
+  optimizer: adamw
+
+  # Balanced sampling
+  batch_size: null          # null => one large balanced batch per epoch
+  per_class_batch: null     # if batch_size is null, can set per_class_batch; null => use min class count
+  num_workers: 0
+
+  # Early stopping
+  early_stopping:
+    enabled: true
+    metric: val_loss
+    patience: 8
+    min_delta: 1.0e-4
+
+  # Gradient clipping
+  grad_clip_norm: 1.0
+
+  # Logging / checkpoints
+  log_every_steps: 10
+  save_best_only: true
+
+  # Score binning for DY mass sculpting plots
+  n_score_bins: 6

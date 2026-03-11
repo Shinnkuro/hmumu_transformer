@@ -1,0 +1,14 @@
+[project]
+name = "hmumu_transformer"
+version = "0.1.0"
+description = "Event-level Transformer with pairwise-bias attention for H->mumu classification."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501"]

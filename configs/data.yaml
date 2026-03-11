@@ -1,0 +1,54 @@
+data:
+  ggH_files:
+    - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/ggh_powhegPS_merged_hpeak_10k.parquet
+  VBF_files:
+    - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/dy_VBF_filter_merged_hpeak_10k.parquet
+  DY_files:
+    - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/dy_M-50_MiNNLO_merged_hpeak_10k.parquet
+    - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/dy_M-100To200_MiNNLO_merged_hpeak_10k.parquet
+
+  # Columns needed for tokenizer/schema. Keep minimal to reduce I/O.
+  columns:
+    - MET_pt
+    - MET_phi
+    - mu1_pt
+    - mu1_eta
+    - mu1_phi
+    - mu1_mass
+    - mu2_pt
+    - mu2_eta
+    - mu2_phi
+    - mu2_mass
+    - dimuon_mass
+    - dimuon_pt_log
+    - njets_nominal
+    - jet1_pt_nominal
+    - jet1_eta_nominal
+    - jet1_phi_nominal
+    - jet1_mass_nominal
+    - jet1_qgl_nominal
+    - jet2_pt_nominal
+    - jet2_eta_nominal
+    - jet2_phi_nominal
+    - jet2_mass_nominal
+    - jet2_qgl_nominal
+    - jet3_pt_nominal
+    - jet3_eta_nominal
+    - jet3_phi_nominal
+    - jet3_mass_nominal
+    - jet3_qgl_nominal
+    - jet4_pt_nominal
+    - jet4_eta_nominal
+    - jet4_phi_nominal
+    - jet4_mass_nominal
+    - jet4_qgl_nominal
+
+  # Split policy: per-class fold = row_index % 4
+  split:
+    n_folds: 4
+    train_folds: [0, 1]
+    val_folds: [2]
+    test_folds: [3]
+
+  # Fit window (already applied in input samples, but enforced as a safety check)
+  dimuon_mass_window: [115.0, 135.0]
