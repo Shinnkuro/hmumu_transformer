@@ -3,7 +3,7 @@
 Event-level Transformer classifier for three classes:
 1) ggH -> μμ
 2) VBF -> μμ
-3) Drell–Yan (DY) -> μμ
+3) DY -> μμ
 
 ## Data inputs (parquet)
 Configured in `configs/data.yaml`:
