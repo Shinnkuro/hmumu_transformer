@@ -14,7 +14,7 @@ Configured in `configs/data.yaml`:
   - `/depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/dy_M-50_MiNNLO_merged.parquet`  
   - `/depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/dy_M-100To200_MiNNLO_merged.parquet`
 
-Each row is one event. The training samples are assumed already restricted to `dimuon_mass` in [115, 135] GeV.
+The training samples are assumed already restricted to `dimuon_mass` in [115, 135] GeV.
 
 ## Tokens and tensors
 - N = 7 tokens per event: [CLS], μ1, μ2, jet1..jet4
