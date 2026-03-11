@@ -3,10 +3,6 @@ import numpy as np
 import pyarrow.dataset as ds
 import pyarrow.parquet as pq
 
-
-# =========================
-# 配置区
-# =========================
 INPUT_FILES = {
     "ggH": "/depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/ggh_powhegPS_merged.parquet",
     "VBF": "/depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/dy_VBF_filter_merged.parquet",
@@ -23,13 +19,9 @@ N_KEEP = 10000
 SEED = 42
 
 
-# =========================
-# 主逻辑
-# =========================
 def filter_and_sample_parquet(input_path: str, output_path: Path, n_keep: int, seed: int) -> None:
     dataset = ds.dataset(input_path, format="parquet")
 
-    # 在读取阶段直接做过滤，避免先把全部事件读进内存
     filtered_table = dataset.to_table(
         filter=(ds.field("dimuon_mass") >= MASS_LOW) & (ds.field("dimuon_mass") < MASS_HIGH)
     )
@@ -47,7 +39,7 @@ def filter_and_sample_parquet(input_path: str, output_path: Path, n_keep: int, s
 
     if n_filtered > n_keep:
         indices = rng.choice(n_filtered, size=n_keep, replace=False)
-        indices = np.sort(indices)  # 不是必须，但这样输出更稳定
+        indices = np.sort(indices)  
         sampled_table = filtered_table.take(indices)
         print(f"       randomly kept: {n_keep}")
     else:
@@ -73,4 +65,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
