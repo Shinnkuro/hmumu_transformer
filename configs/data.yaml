@@ -21,6 +21,11 @@ data:
     - mu2_mass
     - dimuon_mass
     - dimuon_pt_log
+    - dimuon_rapidity
+    - dimuon_ebe_mass_res
+    - dimuon_phi_cs
+    - dimuon_cos_theta_cs
+    - nsoftjets5_nominal
     - njets_nominal
     - jet1_pt_nominal
     - jet1_eta_nominal

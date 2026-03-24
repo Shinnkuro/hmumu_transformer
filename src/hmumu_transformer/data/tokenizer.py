@@ -11,7 +11,7 @@ _EPS = 1e-6
 class TokenConfig:
     n_tokens: int = 7
     max_jets: int = 4
-    x_dim: int = 16
+    x_dim: int = 17
 
 # Token type ids: 0=CLS, 1=MUON, 2=JET
 TYPE_IDS_7 = np.array([0, 1, 1, 2, 2, 2, 2], dtype=np.int64)
@@ -38,12 +38,22 @@ def build_tokens_from_row(row: Dict[str, float], cfg: TokenConfig) -> Tuple[np.n
     met_phi = float(row["MET_phi"])
     njets = float(row["njets_nominal"])
     dimuon_pt_log = float(row["dimuon_pt_log"])
-    # Global block at indices 11..15
+    dimuon_rapidity = float(row["dimuon_rapidity"])
+    dimuon_ebe_mass_res = float(row["dimuon_ebe_mass_res"])
+    dimuon_phi_cs = float(row["dimuon_phi_cs"])
+    dimuon_cos_theta_cs = float(row["dimuon_cos_theta_cs"])
+    nsoftjets5_nominal = float(row["nsoftjets5_nominal"])
+    # Global block at indices 6..7, 9..16
+    x[0, 6] = float(dimuon_rapidity)
+    x[0, 7] = float(dimuon_ebe_mass_res)
+    x[0, 9] = float(dimuon_phi_cs)
+    x[0, 10] = float(dimuon_cos_theta_cs)
     x[0, 11] = float(_safe_log(np.array([met_pt], dtype=np.float32))[0])
     x[0, 12] = float(np.sin(met_phi))
     x[0, 13] = float(np.cos(met_phi))
     x[0, 14] = float(njets)
     x[0, 15] = float(dimuon_pt_log)
+    x[0, 16] = float(nsoftjets5_nominal)
 
     # Muons
     for mi, prefix in [(1, "mu1"), (2, "mu2")]:
