@@ -11,7 +11,7 @@ _EPS = 1e-6
 class TokenConfig:
     n_tokens: int = 7
     max_jets: int = 4
-    x_dim: int = 17
+    x_dim: int = 20
 
 # Token type ids: 0=CLS, 1=MUON, 2=JET
 TYPE_IDS_7 = np.array([0, 1, 1, 2, 2, 2, 2], dtype=np.int64)
@@ -61,8 +61,10 @@ def build_tokens_from_row(row: Dict[str, float], cfg: TokenConfig) -> Tuple[np.n
         eta = float(row[f"{prefix}_eta"])
         phi = float(row[f"{prefix}_phi"])
         mass = float(row[f"{prefix}_mass"])
+        iso = row.get(f"{prefix}_iso", np.nan)
         v[mi, :] = (pt, eta, phi, mass)
         m[mi] = 1
+        x[mi, 17] = float(iso) if np.isfinite(iso) else 0.0
 
     # Jets (1..max_jets)
     nj = int(row["njets_nominal"])
@@ -74,12 +76,16 @@ def build_tokens_from_row(row: Dict[str, float], cfg: TokenConfig) -> Tuple[np.n
             phi = row.get(f"jet{j}_phi_nominal", np.nan)
             mass = row.get(f"jet{j}_mass_nominal", np.nan)
             qgl = row.get(f"jet{j}_qgl_nominal", np.nan)
+            jet_id = row.get(f"jet{j}_jetId_nominal", np.nan)
+            pu_id = row.get(f"jet{j}_puId_nominal", np.nan)
             # If any of the core kinematics are not finite, treat as missing.
             if np.isfinite(pt) and np.isfinite(eta) and np.isfinite(phi) and np.isfinite(mass):
                 v[ti, :] = (float(pt), float(eta), float(phi), float(mass))
                 m[ti] = 1
-                # Jet-specific block: f8 = qgl (if missing, set 0)
+                # Jet-specific block: f8 = qgl, f18 = jet id, f19 = pileup id (if missing, set 0)
                 x[ti, 8] = float(qgl) if np.isfinite(qgl) else 0.0
+                x[ti, 18] = float(jet_id) if np.isfinite(jet_id) else 0.0
+                x[ti, 19] = float(pu_id) if np.isfinite(pu_id) else 0.0
             else:
                 # leave as padding
                 pass
