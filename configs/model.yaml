@@ -1,12 +1,13 @@
 model:
   d_model: 192
-  n_layers: 5
+  n_particle_layers: 3
+  n_class_layers: 2
   n_heads: 6
   dropout: 0.1
 
   # Pairwise feature dimension:
-  # [deta, sin_dphi, cos_dphi, log_dR, log_pt_ratio, log_mij_jetjet]
-  pairwise_dim: 6
+  # [ln Delta, ln kT, ln z, ln m^2]
+  pairwise_dim: 4
   pairwise_hidden: 64
 
   classifier_head:

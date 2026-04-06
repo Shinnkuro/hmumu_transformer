@@ -78,11 +78,12 @@ def main() -> None:
         json.dump(built.x_scaler.to_dict(), f, indent=2)
 
     # Build model
-    token_type_ids = torch.tensor([0, 1, 1, 2, 2, 2, 2], dtype=torch.long)
+    token_type_ids = torch.tensor([0, 1, 1, 2, 2], dtype=torch.long)
     model_cfg = cfg["model"]
     mc = ModelConfig(
         d_model=int(model_cfg["d_model"]),
-        n_layers=int(model_cfg["n_layers"]),
+        n_particle_layers=int(model_cfg["n_particle_layers"]),
+        n_class_layers=int(model_cfg["n_class_layers"]),
         n_heads=int(model_cfg["n_heads"]),
         dropout=float(model_cfg["dropout"]),
         pairwise_dim=int(model_cfg["pairwise_dim"]),

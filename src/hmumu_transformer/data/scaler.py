@@ -26,7 +26,7 @@ class MaskedStandardScaler:
 def fit_masked_standard_scaler(x: np.ndarray, m: np.ndarray) -> MaskedStandardScaler:
     """Fit per-feature mean/std for x[B,N,F], using mask m[B,N] on tokens.
 
-    CLS token is always included (m[:,0]=1). Padding tokens are excluded.
+    Valid tokens are included and padding tokens are excluded.
     For each feature dimension f:
       mean_f = mean over all included tokens
       std_f = std over all included tokens (min std = 1.0 if too small)

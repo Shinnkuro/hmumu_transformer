@@ -1,0 +1,2908 @@
+Traceback (most recent call last):
+  File "/depot/cms/hu1027/hmumu_transformer/.pixi/envs/default/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/depot/cms/hu1027/hmumu_transformer/.pixi/envs/default/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/depot/cms/hu1027/hmumu_transformer/scripts/train.py", line 132, in <module>
+    main()
+  File "/depot/cms/hu1027/hmumu_transformer/scripts/train.py", line 62, in main
+    built = build_dataloaders(cfg)
+  File "/depot/cms/hu1027/hmumu_transformer/src/hmumu_transformer/data/build.py", line 67, in build_dataloaders
+    ggH = _filter_mass_window(read_parquet_files(data_cfg["ggH_files"], cols), window)
+  File "/depot/cms/hu1027/hmumu_transformer/src/hmumu_transformer/data/reader.py", line 23, in read_parquet_files
+    table = dataset.to_table(columns=list(columns))
+  File "pyarrow/_dataset.pyx", line 579, in pyarrow._dataset.Dataset.to_table
+  File "pyarrow/_dataset.pyx", line 415, in pyarrow._dataset.Dataset.scanner
+  File "pyarrow/_dataset.pyx", line 3704, in pyarrow._dataset.Scanner.from_dataset
+  File "pyarrow/_dataset.pyx", line 3617, in pyarrow._dataset.Scanner._make_scan_options
+  File "pyarrow/_dataset.pyx", line 3567, in pyarrow._dataset._populate_builder
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: No match for FieldRef.Name(mu1_mass) in event: uint64 not null
+PV_npvs: uint8 not null
+PV_npvsGood: uint8 not null
+MET_pt: float not null
+MET_phi: float not null
+MET_sumEt: float not null
+mu1_pt: double
+mu1_ptErr: float
+mu2_pt: double
+mu2_ptErr: float
+mu1_pt_over_mass: double
+mu2_pt_over_mass: double
+mu1_eta: double
+mu2_eta: double
+mu1_phi: double
+mu2_phi: double
+mu1_charge: int32
+mu2_charge: int32
+mu1_iso: double
+mu2_iso: double
+mu1_pt_over_mu2_pt: double
+mu1_eta_over_mu2_eta: double
+nmuons: int64 not null
+dimuon_mass: double
+dimuon_pt: double
+dimuon_pt_log: double
+dimuon_eta: double
+dimuon_rapidity: double
+dimuon_phi: double
+dimuon_dEta: double
+dimuon_dPhi: double
+dimuon_dR: double
+acoplanarity: double
+dimuon_ebe_mass_res: double
+dimuon_ebe_mass_res_rel: double
+uncalibrated_dimuon_ebe_mass_res: double
+dimuon_cos_theta_cs: double
+dimuon_phi_cs: double
+dimuon_cos_theta_eta: double
+dimuon_phi_eta: double
+dimuon_pt_over_MET_pt: double
+dimuon_pt_over_jet1_pt: double
+dimuon_pt_over_jet2_pt: double
+mu1_pt_raw: float
+mu2_pt_raw: float
+mu1_pt_fsr: double
+mu2_pt_fsr: double
+year: int64 not null
+run: uint32 not null
+luminosityBlock: uint32 not null
+fraction: double not null
+jet1_default_pt_nominal: float
+jet1_default_eta_nominal: float
+jet1_default_phi_nominal: float
+jet1_default_mass_nominal: float
+jet2_default_pt_nominal: float
+jet2_default_eta_nominal: float
+jet2_default_phi_nominal: float
+jet2_default_mass_nominal: float
+jet3_default_pt_nominal: float
+jet3_default_eta_nominal: float
+jet3_default_phi_nominal: float
+jet3_default_mass_nominal: float
+jet4_default_pt_nominal: float
+jet4_default_eta_nominal: float
+jet4_default_phi_nominal: float
+jet4_default_mass_nominal: float
+nfatJets: int64 not null
+nfatJets_pre: int64 not null
+nfatJets_drmuon: int64
+fatJet1_default_pt_nominal: float
+fatJet1_default_eta_nominal: float
+fatJet1_default_phi_nominal: float
+fatJet1_default_mass_nominal: float
+fatJet1_default_jetId_nominal: uint8
+fatJet1_default_msoftdrop_nominal: float
+fatJet1_default_electronIdx3SJ_nominal: int16
+fatJet1_default_nConstituents_nominal: uint8
+fatJet1_default_tau1_nominal: float
+fatJet1_default_tau2_nominal: float
+fatJet1_default_tau3_nominal: float
+fatJet1_default_tau4_nominal: float
+fatJet1_default_btagDDBvLV2_nominal: float
+fatJet1_default_btagDDCvBV2_nominal: float
+fatJet1_default_btagDDCvLV2_nominal: float
+fatJet1_default_btagDeepB_nominal: float
+fatJet1_default_btagHbb_nominal: float
+fatJet1_default_particleNetWithMass_QCD_nominal: float
+fatJet1_default_particleNetWithMass_WvsQCD_nominal: float
+fatJet1_default_particleNetWithMass_ZvsQCD_nominal: float
+fatJet1_default_particleNet_QCD_nominal: float
+fatJet1_default_particleNet_XbbVsQCD_nominal: float
+fatJet1_default_particleNet_XccVsQCD_nominal: float
+fatJet1_default_particleNet_XggVsQCD_nominal: float
+fatJet1_default_particleNet_XqqVsQCD_nominal: float
+fatJet1_default_particleNet_massCorr_nominal: float
+gjet1_pt: float
+gjet1_eta: float
+gjet1_phi: float
+gjet1_mass: float
+gjet2_pt: float
+gjet2_eta: float
+gjet2_phi: float
+gjet2_mass: float
+gjj_pt: float
+gjj_eta: float
+gjj_phi: float
+gjj_mass: float
+gjj_dEta: float
+gjj_dPhi: float
+gjj_dR: float
+jet1_pt_nominal: double
+jet1_eta_nominal: float
+jet1_rapidity_nominal: double
+jet1_phi_nominal: float
+jet1_qgl_nominal: float
+jet1_btagPNetQvG_nominal: float
+jet1_btagDeepFlavQG_nominal: float
+jet1_jetId_nominal: uint8
+jet1_puId_nominal: uint8
+jet1_mass_nominal: double
+jet1_area_nominal: float
+jet2_pt_nominal: double
+jet2_eta_nominal: float
+jet2_rapidity_nominal: double
+jet2_phi_nominal: float
+jet2_qgl_nominal: float
+jet2_btagPNetQvG_nominal: float
+jet2_btagDeepFlavQG_nominal: float
+jet2_jetId_nominal: uint8
+jet2_puId_nominal: uint8
+jet2_mass_nominal: double
+jet2_area_nominal: float
+jet3_pt_nominal: double
+jet3_eta_nominal: float
+jet3_rapidity_nominal: double
+jet3_phi_nominal: float
+jet3_qgl_nominal: float
+jet3_btagPNetQvG_nominal: float
+jet3_btagDeepFlavQG_nominal: float
+jet3_jetId_nominal: uint8
+jet3_puId_nominal: uint8
+jet3_mass_nominal: double
+jet3_area_nominal: float
+jet4_pt_nominal: double
+jet4_eta_nominal: float
+jet4_rapidity_nominal: double
+jet4_phi_nominal: float
+jet4_qgl_nominal: float
+jet4_btagPNetQvG_nominal: float
+jet4_btagDeepFlavQG_nominal: float
+jet4_jetId_nominal: uint8
+jet4_puId_nominal: uint8
+jet4_mass_nominal: double
+jet4_area_nominal: float
+jj_mass_nominal: double
+jj_mass_log_nominal: double
+jj_pt_nominal: double
+jj_eta_nominal: double
+jj_phi_nominal: double
+jj_dEta_nominal: float
+jj_dPhi_nominal: float
+mmj1_dEta_nominal: double
+mmj1_dPhi_nominal: double
+mmj1_dR_nominal: double
+mmj2_dEta_nominal: double
+mmj2_dPhi_nominal: double
+mmj2_dR_nominal: double
+mmj_min_dEta_nominal: double
+mmj_min_dPhi_nominal: double
+mmjj_pt_nominal: double
+mmjj_eta_nominal: double
+mmjj_phi_nominal: double
+mmjj_mass_nominal: double
+rpt_nominal: double
+pt_centrality_nominal: double
+zeppenfeld_nominal: double
+ll_zstar_log_nominal: double
+njets_nominal: int64 not null
+jet1_pt_gen_nominal: float
+jet2_pt_gen_nominal: float
+jet1_pt_raw_nominal: float
+jet2_pt_raw_nominal: float
+jet1_mass_raw_nominal: float
+jet2_mass_raw_nominal: float
+jet1_mass_jec_nominal: double
+jet2_mass_jec_nominal: double
+jet1_pt_jec_nominal: double
+jet2_pt_jec_nominal: double
+nsoftjets2_new_nominal: int64 not null
+htsoft2_new_nominal: float not null
+nsoftjets5_new_nominal: int64 not null
+htsoft5_new_nominal: float not null
+nsoftjets2_nominal: int64 not null
+htsoft2_nominal: float not null
+nsoftjets5_nominal: int64 not null
+htsoft5_nominal: float not null
+nBtagLoose_nominal: int64 not null
+nBtagMedium_nominal: int64 not null
+jet1_pt_Absolute_up: double
+jet1_eta_Absolute_up: double
+jet1_rapidity_Absolute_up: double
+jet1_phi_Absolute_up: double
+jet1_qgl_Absolute_up: float
+jet1_btagPNetQvG_Absolute_up: float
+jet1_btagDeepFlavQG_Absolute_up: float
+jet1_jetId_Absolute_up: uint8
+jet1_puId_Absolute_up: uint8
+jet1_mass_Absolute_up: double
+jet1_area_Absolute_up: float
+jet2_pt_Absolute_up: double
+jet2_eta_Absolute_up: double
+jet2_rapidity_Absolute_up: double
+jet2_phi_Absolute_up: double
+jet2_qgl_Absolute_up: float
+jet2_btagPNetQvG_Absolute_up: float
+jet2_btagDeepFlavQG_Absolute_up: float
+jet2_jetId_Absolute_up: uint8
+jet2_puId_Absolute_up: uint8
+jet2_mass_Absolute_up: double
+jet2_area_Absolute_up: float
+jet3_pt_Absolute_up: double
+jet3_eta_Absolute_up: double
+jet3_rapidity_Absolute_up: double
+jet3_phi_Absolute_up: double
+jet3_qgl_Absolute_up: float
+jet3_btagPNetQvG_Absolute_up: float
+jet3_btagDeepFlavQG_Absolute_up: float
+jet3_jetId_Absolute_up: uint8
+jet3_puId_Absolute_up: uint8
+jet3_mass_Absolute_up: double
+jet3_area_Absolute_up: float
+jet4_pt_Absolute_up: double
+jet4_eta_Absolute_up: double
+jet4_rapidity_Absolute_up: double
+jet4_phi_Absolute_up: double
+jet4_qgl_Absolute_up: float
+jet4_btagPNetQvG_Absolute_up: float
+jet4_btagDeepFlavQG_Absolute_up: float
+jet4_jetId_Absolute_up: uint8
+jet4_puId_Absolute_up: uint8
+jet4_mass_Absolute_up: double
+jet4_area_Absolute_up: float
+jj_mass_Absolute_up: double
+jj_mass_log_Absolute_up: double
+jj_pt_Absolute_up: double
+jj_eta_Absolute_up: double
+jj_phi_Absolute_up: double
+jj_dEta_Absolute_up: double
+jj_dPhi_Absolute_up: double
+mmj1_dEta_Absolute_up: double
+mmj1_dPhi_Absolute_up: double
+mmj1_dR_Absolute_up: double
+mmj2_dEta_Absolute_up: double
+mmj2_dPhi_Absolute_up: double
+mmj2_dR_Absolute_up: double
+mmj_min_dEta_Absolute_up: double
+mmj_min_dPhi_Absolute_up: double
+mmjj_pt_Absolute_up: double
+mmjj_eta_Absolute_up: double
+mmjj_phi_Absolute_up: double
+mmjj_mass_Absolute_up: double
+rpt_Absolute_up: double
+pt_centrality_Absolute_up: double
+zeppenfeld_Absolute_up: double
+ll_zstar_log_Absolute_up: double
+njets_Absolute_up: int64 not null
+nsoftjets2_new_Absolute_up: int64 not null
+htsoft2_new_Absolute_up: float not null
+nsoftjets5_new_Absolute_up: int64 not null
+htsoft5_new_Absolute_up: float not null
+nsoftjets2_Absolute_up: int64 not null
+htsoft2_Absolute_up: float not null
+nsoftjets5_Absolute_up: int64 not null
+htsoft5_Absolute_up: float not null
+nBtagLoose_Absolute_up: int64 not null
+nBtagMedium_Absolute_up: int64 not null
+jet1_pt_Absolute_2018_up: double
+jet1_eta_Absolute_2018_up: double
+jet1_rapidity_Absolute_2018_up: double
+jet1_phi_Absolute_2018_up: double
+jet1_qgl_Absolute_2018_up: float
+jet1_btagPNetQvG_Absolute_2018_up: float
+jet1_btagDeepFlavQG_Absolute_2018_up: float
+jet1_jetId_Absolute_2018_up: uint8
+jet1_puId_Absolute_2018_up: uint8
+jet1_mass_Absolute_2018_up: double
+jet1_area_Absolute_2018_up: float
+jet2_pt_Absolute_2018_up: double
+jet2_eta_Absolute_2018_up: double
+jet2_rapidity_Absolute_2018_up: double
+jet2_phi_Absolute_2018_up: double
+jet2_qgl_Absolute_2018_up: float
+jet2_btagPNetQvG_Absolute_2018_up: float
+jet2_btagDeepFlavQG_Absolute_2018_up: float
+jet2_jetId_Absolute_2018_up: uint8
+jet2_puId_Absolute_2018_up: uint8
+jet2_mass_Absolute_2018_up: double
+jet2_area_Absolute_2018_up: float
+jet3_pt_Absolute_2018_up: double
+jet3_eta_Absolute_2018_up: double
+jet3_rapidity_Absolute_2018_up: double
+jet3_phi_Absolute_2018_up: double
+jet3_qgl_Absolute_2018_up: float
+jet3_btagPNetQvG_Absolute_2018_up: float
+jet3_btagDeepFlavQG_Absolute_2018_up: float
+jet3_jetId_Absolute_2018_up: uint8
+jet3_puId_Absolute_2018_up: uint8
+jet3_mass_Absolute_2018_up: double
+jet3_area_Absolute_2018_up: float
+jet4_pt_Absolute_2018_up: double
+jet4_eta_Absolute_2018_up: double
+jet4_rapidity_Absolute_2018_up: double
+jet4_phi_Absolute_2018_up: double
+jet4_qgl_Absolute_2018_up: float
+jet4_btagPNetQvG_Absolute_2018_up: float
+jet4_btagDeepFlavQG_Absolute_2018_up: float
+jet4_jetId_Absolute_2018_up: uint8
+jet4_puId_Absolute_2018_up: uint8
+jet4_mass_Absolute_2018_up: double
+jet4_area_Absolute_2018_up: float
+jj_mass_Absolute_2018_up: double
+jj_mass_log_Absolute_2018_up: double
+jj_pt_Absolute_2018_up: double
+jj_eta_Absolute_2018_up: double
+jj_phi_Absolute_2018_up: double
+jj_dEta_Absolute_2018_up: double
+jj_dPhi_Absolute_2018_up: double
+mmj1_dEta_Absolute_2018_up: double
+mmj1_dPhi_Absolute_2018_up: double
+mmj1_dR_Absolute_2018_up: double
+mmj2_dEta_Absolute_2018_up: double
+mmj2_dPhi_Absolute_2018_up: double
+mmj2_dR_Absolute_2018_up: double
+mmj_min_dEta_Absolute_2018_up: double
+mmj_min_dPhi_Absolute_2018_up: double
+mmjj_pt_Absolute_2018_up: double
+mmjj_eta_Absolute_2018_up: double
+mmjj_phi_Absolute_2018_up: double
+mmjj_mass_Absolute_2018_up: double
+rpt_Absolute_2018_up: double
+pt_centrality_Absolute_2018_up: double
+zeppenfeld_Absolute_2018_up: double
+ll_zstar_log_Absolute_2018_up: double
+njets_Absolute_2018_up: int64 not null
+nsoftjets2_new_Absolute_2018_up: int64 not null
+htsoft2_new_Absolute_2018_up: float not null
+nsoftjets5_new_Absolute_2018_up: int64 not null
+htsoft5_new_Absolute_2018_up: float not null
+nsoftjets2_Absolute_2018_up: int64 not null
+htsoft2_Absolute_2018_up: float not null
+nsoftjets5_Absolute_2018_up: int64 not null
+htsoft5_Absolute_2018_up: float not null
+nBtagLoose_Absolute_2018_up: int64 not null
+nBtagMedium_Absolute_2018_up: int64 not null
+jet1_pt_BBEC1_up: double
+jet1_eta_BBEC1_up: double
+jet1_rapidity_BBEC1_up: double
+jet1_phi_BBEC1_up: double
+jet1_qgl_BBEC1_up: float
+jet1_btagPNetQvG_BBEC1_up: float
+jet1_btagDeepFlavQG_BBEC1_up: float
+jet1_jetId_BBEC1_up: uint8
+jet1_puId_BBEC1_up: uint8
+jet1_mass_BBEC1_up: double
+jet1_area_BBEC1_up: float
+jet2_pt_BBEC1_up: double
+jet2_eta_BBEC1_up: double
+jet2_rapidity_BBEC1_up: double
+jet2_phi_BBEC1_up: double
+jet2_qgl_BBEC1_up: float
+jet2_btagPNetQvG_BBEC1_up: float
+jet2_btagDeepFlavQG_BBEC1_up: float
+jet2_jetId_BBEC1_up: uint8
+jet2_puId_BBEC1_up: uint8
+jet2_mass_BBEC1_up: double
+jet2_area_BBEC1_up: float
+jet3_pt_BBEC1_up: double
+jet3_eta_BBEC1_up: double
+jet3_rapidity_BBEC1_up: double
+jet3_phi_BBEC1_up: double
+jet3_qgl_BBEC1_up: float
+jet3_btagPNetQvG_BBEC1_up: float
+jet3_btagDeepFlavQG_BBEC1_up: float
+jet3_jetId_BBEC1_up: uint8
+jet3_puId_BBEC1_up: uint8
+jet3_mass_BBEC1_up: double
+jet3_area_BBEC1_up: float
+jet4_pt_BBEC1_up: double
+jet4_eta_BBEC1_up: double
+jet4_rapidity_BBEC1_up: double
+jet4_phi_BBEC1_up: double
+jet4_qgl_BBEC1_up: float
+jet4_btagPNetQvG_BBEC1_up: float
+jet4_btagDeepFlavQG_BBEC1_up: float
+jet4_jetId_BBEC1_up: uint8
+jet4_puId_BBEC1_up: uint8
+jet4_mass_BBEC1_up: double
+jet4_area_BBEC1_up: float
+jj_mass_BBEC1_up: double
+jj_mass_log_BBEC1_up: double
+jj_pt_BBEC1_up: double
+jj_eta_BBEC1_up: double
+jj_phi_BBEC1_up: double
+jj_dEta_BBEC1_up: double
+jj_dPhi_BBEC1_up: double
+mmj1_dEta_BBEC1_up: double
+mmj1_dPhi_BBEC1_up: double
+mmj1_dR_BBEC1_up: double
+mmj2_dEta_BBEC1_up: double
+mmj2_dPhi_BBEC1_up: double
+mmj2_dR_BBEC1_up: double
+mmj_min_dEta_BBEC1_up: double
+mmj_min_dPhi_BBEC1_up: double
+mmjj_pt_BBEC1_up: double
+mmjj_eta_BBEC1_up: double
+mmjj_phi_BBEC1_up: double
+mmjj_mass_BBEC1_up: double
+rpt_BBEC1_up: double
+pt_centrality_BBEC1_up: double
+zeppenfeld_BBEC1_up: double
+ll_zstar_log_BBEC1_up: double
+njets_BBEC1_up: int64 not null
+nsoftjets2_new_BBEC1_up: int64 not null
+htsoft2_new_BBEC1_up: float not null
+nsoftjets5_new_BBEC1_up: int64 not null
+htsoft5_new_BBEC1_up: float not null
+nsoftjets2_BBEC1_up: int64 not null
+htsoft2_BBEC1_up: float not null
+nsoftjets5_BBEC1_up: int64 not null
+htsoft5_BBEC1_up: float not null
+nBtagLoose_BBEC1_up: int64 not null
+nBtagMedium_BBEC1_up: int64 not null
+jet1_pt_BBEC1_2018_up: double
+jet1_eta_BBEC1_2018_up: double
+jet1_rapidity_BBEC1_2018_up: double
+jet1_phi_BBEC1_2018_up: double
+jet1_qgl_BBEC1_2018_up: float
+jet1_btagPNetQvG_BBEC1_2018_up: float
+jet1_btagDeepFlavQG_BBEC1_2018_up: float
+jet1_jetId_BBEC1_2018_up: uint8
+jet1_puId_BBEC1_2018_up: uint8
+jet1_mass_BBEC1_2018_up: double
+jet1_area_BBEC1_2018_up: float
+jet2_pt_BBEC1_2018_up: double
+jet2_eta_BBEC1_2018_up: double
+jet2_rapidity_BBEC1_2018_up: double
+jet2_phi_BBEC1_2018_up: double
+jet2_qgl_BBEC1_2018_up: float
+jet2_btagPNetQvG_BBEC1_2018_up: float
+jet2_btagDeepFlavQG_BBEC1_2018_up: float
+jet2_jetId_BBEC1_2018_up: uint8
+jet2_puId_BBEC1_2018_up: uint8
+jet2_mass_BBEC1_2018_up: double
+jet2_area_BBEC1_2018_up: float
+jet3_pt_BBEC1_2018_up: double
+jet3_eta_BBEC1_2018_up: double
+jet3_rapidity_BBEC1_2018_up: double
+jet3_phi_BBEC1_2018_up: double
+jet3_qgl_BBEC1_2018_up: float
+jet3_btagPNetQvG_BBEC1_2018_up: float
+jet3_btagDeepFlavQG_BBEC1_2018_up: float
+jet3_jetId_BBEC1_2018_up: uint8
+jet3_puId_BBEC1_2018_up: uint8
+jet3_mass_BBEC1_2018_up: double
+jet3_area_BBEC1_2018_up: float
+jet4_pt_BBEC1_2018_up: double
+jet4_eta_BBEC1_2018_up: double
+jet4_rapidity_BBEC1_2018_up: double
+jet4_phi_BBEC1_2018_up: double
+jet4_qgl_BBEC1_2018_up: float
+jet4_btagPNetQvG_BBEC1_2018_up: float
+jet4_btagDeepFlavQG_BBEC1_2018_up: float
+jet4_jetId_BBEC1_2018_up: uint8
+jet4_puId_BBEC1_2018_up: uint8
+jet4_mass_BBEC1_2018_up: double
+jet4_area_BBEC1_2018_up: float
+jj_mass_BBEC1_2018_up: double
+jj_mass_log_BBEC1_2018_up: double
+jj_pt_BBEC1_2018_up: double
+jj_eta_BBEC1_2018_up: double
+jj_phi_BBEC1_2018_up: double
+jj_dEta_BBEC1_2018_up: double
+jj_dPhi_BBEC1_2018_up: double
+mmj1_dEta_BBEC1_2018_up: double
+mmj1_dPhi_BBEC1_2018_up: double
+mmj1_dR_BBEC1_2018_up: double
+mmj2_dEta_BBEC1_2018_up: double
+mmj2_dPhi_BBEC1_2018_up: double
+mmj2_dR_BBEC1_2018_up: double
+mmj_min_dEta_BBEC1_2018_up: double
+mmj_min_dPhi_BBEC1_2018_up: double
+mmjj_pt_BBEC1_2018_up: double
+mmjj_eta_BBEC1_2018_up: double
+mmjj_phi_BBEC1_2018_up: double
+mmjj_mass_BBEC1_2018_up: double
+rpt_BBEC1_2018_up: double
+pt_centrality_BBEC1_2018_up: double
+zeppenfeld_BBEC1_2018_up: double
+ll_zstar_log_BBEC1_2018_up: double
+njets_BBEC1_2018_up: int64 not null
+nsoftjets2_new_BBEC1_2018_up: int64 not null
+htsoft2_new_BBEC1_2018_up: float not null
+nsoftjets5_new_BBEC1_2018_up: int64 not null
+htsoft5_new_BBEC1_2018_up: float not null
+nsoftjets2_BBEC1_2018_up: int64 not null
+htsoft2_BBEC1_2018_up: float not null
+nsoftjets5_BBEC1_2018_up: int64 not null
+htsoft5_BBEC1_2018_up: float not null
+nBtagLoose_BBEC1_2018_up: int64 not null
+nBtagMedium_BBEC1_2018_up: int64 not null
+jet1_pt_EC2_up: double
+jet1_eta_EC2_up: double
+jet1_rapidity_EC2_up: double
+jet1_phi_EC2_up: double
+jet1_qgl_EC2_up: float
+jet1_btagPNetQvG_EC2_up: float
+jet1_btagDeepFlavQG_EC2_up: float
+jet1_jetId_EC2_up: uint8
+jet1_puId_EC2_up: uint8
+jet1_mass_EC2_up: double
+jet1_area_EC2_up: float
+jet2_pt_EC2_up: double
+jet2_eta_EC2_up: double
+jet2_rapidity_EC2_up: double
+jet2_phi_EC2_up: double
+jet2_qgl_EC2_up: float
+jet2_btagPNetQvG_EC2_up: float
+jet2_btagDeepFlavQG_EC2_up: float
+jet2_jetId_EC2_up: uint8
+jet2_puId_EC2_up: uint8
+jet2_mass_EC2_up: double
+jet2_area_EC2_up: float
+jet3_pt_EC2_up: double
+jet3_eta_EC2_up: double
+jet3_rapidity_EC2_up: double
+jet3_phi_EC2_up: double
+jet3_qgl_EC2_up: float
+jet3_btagPNetQvG_EC2_up: float
+jet3_btagDeepFlavQG_EC2_up: float
+jet3_jetId_EC2_up: uint8
+jet3_puId_EC2_up: uint8
+jet3_mass_EC2_up: double
+jet3_area_EC2_up: float
+jet4_pt_EC2_up: double
+jet4_eta_EC2_up: double
+jet4_rapidity_EC2_up: double
+jet4_phi_EC2_up: double
+jet4_qgl_EC2_up: float
+jet4_btagPNetQvG_EC2_up: float
+jet4_btagDeepFlavQG_EC2_up: float
+jet4_jetId_EC2_up: uint8
+jet4_puId_EC2_up: uint8
+jet4_mass_EC2_up: double
+jet4_area_EC2_up: float
+jj_mass_EC2_up: double
+jj_mass_log_EC2_up: double
+jj_pt_EC2_up: double
+jj_eta_EC2_up: double
+jj_phi_EC2_up: double
+jj_dEta_EC2_up: double
+jj_dPhi_EC2_up: double
+mmj1_dEta_EC2_up: double
+mmj1_dPhi_EC2_up: double
+mmj1_dR_EC2_up: double
+mmj2_dEta_EC2_up: double
+mmj2_dPhi_EC2_up: double
+mmj2_dR_EC2_up: double
+mmj_min_dEta_EC2_up: double
+mmj_min_dPhi_EC2_up: double
+mmjj_pt_EC2_up: double
+mmjj_eta_EC2_up: double
+mmjj_phi_EC2_up: double
+mmjj_mass_EC2_up: double
+rpt_EC2_up: double
+pt_centrality_EC2_up: double
+zeppenfeld_EC2_up: double
+ll_zstar_log_EC2_up: double
+njets_EC2_up: int64 not null
+nsoftjets2_new_EC2_up: int64 not null
+htsoft2_new_EC2_up: float not null
+nsoftjets5_new_EC2_up: int64 not null
+htsoft5_new_EC2_up: float not null
+nsoftjets2_EC2_up: int64 not null
+htsoft2_EC2_up: float not null
+nsoftjets5_EC2_up: int64 not null
+htsoft5_EC2_up: float not null
+nBtagLoose_EC2_up: int64 not null
+nBtagMedium_EC2_up: int64 not null
+jet1_pt_EC2_2018_up: double
+jet1_eta_EC2_2018_up: double
+jet1_rapidity_EC2_2018_up: double
+jet1_phi_EC2_2018_up: double
+jet1_qgl_EC2_2018_up: float
+jet1_btagPNetQvG_EC2_2018_up: float
+jet1_btagDeepFlavQG_EC2_2018_up: float
+jet1_jetId_EC2_2018_up: uint8
+jet1_puId_EC2_2018_up: uint8
+jet1_mass_EC2_2018_up: double
+jet1_area_EC2_2018_up: float
+jet2_pt_EC2_2018_up: double
+jet2_eta_EC2_2018_up: double
+jet2_rapidity_EC2_2018_up: double
+jet2_phi_EC2_2018_up: double
+jet2_qgl_EC2_2018_up: float
+jet2_btagPNetQvG_EC2_2018_up: float
+jet2_btagDeepFlavQG_EC2_2018_up: float
+jet2_jetId_EC2_2018_up: uint8
+jet2_puId_EC2_2018_up: uint8
+jet2_mass_EC2_2018_up: double
+jet2_area_EC2_2018_up: float
+jet3_pt_EC2_2018_up: double
+jet3_eta_EC2_2018_up: double
+jet3_rapidity_EC2_2018_up: double
+jet3_phi_EC2_2018_up: double
+jet3_qgl_EC2_2018_up: float
+jet3_btagPNetQvG_EC2_2018_up: float
+jet3_btagDeepFlavQG_EC2_2018_up: float
+jet3_jetId_EC2_2018_up: uint8
+jet3_puId_EC2_2018_up: uint8
+jet3_mass_EC2_2018_up: double
+jet3_area_EC2_2018_up: float
+jet4_pt_EC2_2018_up: double
+jet4_eta_EC2_2018_up: double
+jet4_rapidity_EC2_2018_up: double
+jet4_phi_EC2_2018_up: double
+jet4_qgl_EC2_2018_up: float
+jet4_btagPNetQvG_EC2_2018_up: float
+jet4_btagDeepFlavQG_EC2_2018_up: float
+jet4_jetId_EC2_2018_up: uint8
+jet4_puId_EC2_2018_up: uint8
+jet4_mass_EC2_2018_up: double
+jet4_area_EC2_2018_up: float
+jj_mass_EC2_2018_up: double
+jj_mass_log_EC2_2018_up: double
+jj_pt_EC2_2018_up: double
+jj_eta_EC2_2018_up: double
+jj_phi_EC2_2018_up: double
+jj_dEta_EC2_2018_up: double
+jj_dPhi_EC2_2018_up: double
+mmj1_dEta_EC2_2018_up: double
+mmj1_dPhi_EC2_2018_up: double
+mmj1_dR_EC2_2018_up: double
+mmj2_dEta_EC2_2018_up: double
+mmj2_dPhi_EC2_2018_up: double
+mmj2_dR_EC2_2018_up: double
+mmj_min_dEta_EC2_2018_up: double
+mmj_min_dPhi_EC2_2018_up: double
+mmjj_pt_EC2_2018_up: double
+mmjj_eta_EC2_2018_up: double
+mmjj_phi_EC2_2018_up: double
+mmjj_mass_EC2_2018_up: double
+rpt_EC2_2018_up: double
+pt_centrality_EC2_2018_up: double
+zeppenfeld_EC2_2018_up: double
+ll_zstar_log_EC2_2018_up: double
+njets_EC2_2018_up: int64 not null
+nsoftjets2_new_EC2_2018_up: int64 not null
+htsoft2_new_EC2_2018_up: float not null
+nsoftjets5_new_EC2_2018_up: int64 not null
+htsoft5_new_EC2_2018_up: float not null
+nsoftjets2_EC2_2018_up: int64 not null
+htsoft2_EC2_2018_up: float not null
+nsoftjets5_EC2_2018_up: int64 not null
+htsoft5_EC2_2018_up: float not null
+nBtagLoose_EC2_2018_up: int64 not null
+nBtagMedium_EC2_2018_up: int64 not null
+jet1_pt_HF_up: double
+jet1_eta_HF_up: double
+jet1_rapidity_HF_up: double
+jet1_phi_HF_up: double
+jet1_qgl_HF_up: float
+jet1_btagPNetQvG_HF_up: float
+jet1_btagDeepFlavQG_HF_up: float
+jet1_jetId_HF_up: uint8
+jet1_puId_HF_up: uint8
+jet1_mass_HF_up: double
+jet1_area_HF_up: float
+jet2_pt_HF_up: double
+jet2_eta_HF_up: double
+jet2_rapidity_HF_up: double
+jet2_phi_HF_up: double
+jet2_qgl_HF_up: float
+jet2_btagPNetQvG_HF_up: float
+jet2_btagDeepFlavQG_HF_up: float
+jet2_jetId_HF_up: uint8
+jet2_puId_HF_up: uint8
+jet2_mass_HF_up: double
+jet2_area_HF_up: float
+jet3_pt_HF_up: double
+jet3_eta_HF_up: double
+jet3_rapidity_HF_up: double
+jet3_phi_HF_up: double
+jet3_qgl_HF_up: float
+jet3_btagPNetQvG_HF_up: float
+jet3_btagDeepFlavQG_HF_up: float
+jet3_jetId_HF_up: uint8
+jet3_puId_HF_up: uint8
+jet3_mass_HF_up: double
+jet3_area_HF_up: float
+jet4_pt_HF_up: double
+jet4_eta_HF_up: double
+jet4_rapidity_HF_up: double
+jet4_phi_HF_up: double
+jet4_qgl_HF_up: float
+jet4_btagPNetQvG_HF_up: float
+jet4_btagDeepFlavQG_HF_up: float
+jet4_jetId_HF_up: uint8
+jet4_puId_HF_up: uint8
+jet4_mass_HF_up: double
+jet4_area_HF_up: float
+jj_mass_HF_up: double
+jj_mass_log_HF_up: double
+jj_pt_HF_up: double
+jj_eta_HF_up: double
+jj_phi_HF_up: double
+jj_dEta_HF_up: double
+jj_dPhi_HF_up: double
+mmj1_dEta_HF_up: double
+mmj1_dPhi_HF_up: double
+mmj1_dR_HF_up: double
+mmj2_dEta_HF_up: double
+mmj2_dPhi_HF_up: double
+mmj2_dR_HF_up: double
+mmj_min_dEta_HF_up: double
+mmj_min_dPhi_HF_up: double
+mmjj_pt_HF_up: double
+mmjj_eta_HF_up: double
+mmjj_phi_HF_up: double
+mmjj_mass_HF_up: double
+rpt_HF_up: double
+pt_centrality_HF_up: double
+zeppenfeld_HF_up: double
+ll_zstar_log_HF_up: double
+njets_HF_up: int64 not null
+nsoftjets2_new_HF_up: int64 not null
+htsoft2_new_HF_up: float not null
+nsoftjets5_new_HF_up: int64 not null
+htsoft5_new_HF_up: float not null
+nsoftjets2_HF_up: int64 not null
+htsoft2_HF_up: float not null
+nsoftjets5_HF_up: int64 not null
+htsoft5_HF_up: float not null
+nBtagLoose_HF_up: int64 not null
+nBtagMedium_HF_up: int64 not null
+jet1_pt_HF_2018_up: double
+jet1_eta_HF_2018_up: double
+jet1_rapidity_HF_2018_up: double
+jet1_phi_HF_2018_up: double
+jet1_qgl_HF_2018_up: float
+jet1_btagPNetQvG_HF_2018_up: float
+jet1_btagDeepFlavQG_HF_2018_up: float
+jet1_jetId_HF_2018_up: uint8
+jet1_puId_HF_2018_up: uint8
+jet1_mass_HF_2018_up: double
+jet1_area_HF_2018_up: float
+jet2_pt_HF_2018_up: double
+jet2_eta_HF_2018_up: double
+jet2_rapidity_HF_2018_up: double
+jet2_phi_HF_2018_up: double
+jet2_qgl_HF_2018_up: float
+jet2_btagPNetQvG_HF_2018_up: float
+jet2_btagDeepFlavQG_HF_2018_up: float
+jet2_jetId_HF_2018_up: uint8
+jet2_puId_HF_2018_up: uint8
+jet2_mass_HF_2018_up: double
+jet2_area_HF_2018_up: float
+jet3_pt_HF_2018_up: double
+jet3_eta_HF_2018_up: double
+jet3_rapidity_HF_2018_up: double
+jet3_phi_HF_2018_up: double
+jet3_qgl_HF_2018_up: float
+jet3_btagPNetQvG_HF_2018_up: float
+jet3_btagDeepFlavQG_HF_2018_up: float
+jet3_jetId_HF_2018_up: uint8
+jet3_puId_HF_2018_up: uint8
+jet3_mass_HF_2018_up: double
+jet3_area_HF_2018_up: float
+jet4_pt_HF_2018_up: double
+jet4_eta_HF_2018_up: double
+jet4_rapidity_HF_2018_up: double
+jet4_phi_HF_2018_up: double
+jet4_qgl_HF_2018_up: float
+jet4_btagPNetQvG_HF_2018_up: float
+jet4_btagDeepFlavQG_HF_2018_up: float
+jet4_jetId_HF_2018_up: uint8
+jet4_puId_HF_2018_up: uint8
+jet4_mass_HF_2018_up: double
+jet4_area_HF_2018_up: float
+jj_mass_HF_2018_up: double
+jj_mass_log_HF_2018_up: double
+jj_pt_HF_2018_up: double
+jj_eta_HF_2018_up: double
+jj_phi_HF_2018_up: double
+jj_dEta_HF_2018_up: double
+jj_dPhi_HF_2018_up: double
+mmj1_dEta_HF_2018_up: double
+mmj1_dPhi_HF_2018_up: double
+mmj1_dR_HF_2018_up: double
+mmj2_dEta_HF_2018_up: double
+mmj2_dPhi_HF_2018_up: double
+mmj2_dR_HF_2018_up: double
+mmj_min_dEta_HF_2018_up: double
+mmj_min_dPhi_HF_2018_up: double
+mmjj_pt_HF_2018_up: double
+mmjj_eta_HF_2018_up: double
+mmjj_phi_HF_2018_up: double
+mmjj_mass_HF_2018_up: double
+rpt_HF_2018_up: double
+pt_centrality_HF_2018_up: double
+zeppenfeld_HF_2018_up: double
+ll_zstar_log_HF_2018_up: double
+njets_HF_2018_up: int64 not null
+nsoftjets2_new_HF_2018_up: int64 not null
+htsoft2_new_HF_2018_up: float not null
+nsoftjets5_new_HF_2018_up: int64 not null
+htsoft5_new_HF_2018_up: float not null
+nsoftjets2_HF_2018_up: int64 not null
+htsoft2_HF_2018_up: float not null
+nsoftjets5_HF_2018_up: int64 not null
+htsoft5_HF_2018_up: float not null
+nBtagLoose_HF_2018_up: int64 not null
+nBtagMedium_HF_2018_up: int64 not null
+jet1_pt_RelativeBal_up: double
+jet1_eta_RelativeBal_up: double
+jet1_rapidity_RelativeBal_up: double
+jet1_phi_RelativeBal_up: double
+jet1_qgl_RelativeBal_up: float
+jet1_btagPNetQvG_RelativeBal_up: float
+jet1_btagDeepFlavQG_RelativeBal_up: float
+jet1_jetId_RelativeBal_up: uint8
+jet1_puId_RelativeBal_up: uint8
+jet1_mass_RelativeBal_up: double
+jet1_area_RelativeBal_up: float
+jet2_pt_RelativeBal_up: double
+jet2_eta_RelativeBal_up: double
+jet2_rapidity_RelativeBal_up: double
+jet2_phi_RelativeBal_up: double
+jet2_qgl_RelativeBal_up: float
+jet2_btagPNetQvG_RelativeBal_up: float
+jet2_btagDeepFlavQG_RelativeBal_up: float
+jet2_jetId_RelativeBal_up: uint8
+jet2_puId_RelativeBal_up: uint8
+jet2_mass_RelativeBal_up: double
+jet2_area_RelativeBal_up: float
+jet3_pt_RelativeBal_up: double
+jet3_eta_RelativeBal_up: double
+jet3_rapidity_RelativeBal_up: double
+jet3_phi_RelativeBal_up: double
+jet3_qgl_RelativeBal_up: float
+jet3_btagPNetQvG_RelativeBal_up: float
+jet3_btagDeepFlavQG_RelativeBal_up: float
+jet3_jetId_RelativeBal_up: uint8
+jet3_puId_RelativeBal_up: uint8
+jet3_mass_RelativeBal_up: double
+jet3_area_RelativeBal_up: float
+jet4_pt_RelativeBal_up: double
+jet4_eta_RelativeBal_up: double
+jet4_rapidity_RelativeBal_up: double
+jet4_phi_RelativeBal_up: double
+jet4_qgl_RelativeBal_up: float
+jet4_btagPNetQvG_RelativeBal_up: float
+jet4_btagDeepFlavQG_RelativeBal_up: float
+jet4_jetId_RelativeBal_up: uint8
+jet4_puId_RelativeBal_up: uint8
+jet4_mass_RelativeBal_up: double
+jet4_area_RelativeBal_up: float
+jj_mass_RelativeBal_up: double
+jj_mass_log_RelativeBal_up: double
+jj_pt_RelativeBal_up: double
+jj_eta_RelativeBal_up: double
+jj_phi_RelativeBal_up: double
+jj_dEta_RelativeBal_up: double
+jj_dPhi_RelativeBal_up: double
+mmj1_dEta_RelativeBal_up: double
+mmj1_dPhi_RelativeBal_up: double
+mmj1_dR_RelativeBal_up: double
+mmj2_dEta_RelativeBal_up: double
+mmj2_dPhi_RelativeBal_up: double
+mmj2_dR_RelativeBal_up: double
+mmj_min_dEta_RelativeBal_up: double
+mmj_min_dPhi_RelativeBal_up: double
+mmjj_pt_RelativeBal_up: double
+mmjj_eta_RelativeBal_up: double
+mmjj_phi_RelativeBal_up: double
+mmjj_mass_RelativeBal_up: double
+rpt_RelativeBal_up: double
+pt_centrality_RelativeBal_up: double
+zeppenfeld_RelativeBal_up: double
+ll_zstar_log_RelativeBal_up: double
+njets_RelativeBal_up: int64 not null
+nsoftjets2_new_RelativeBal_up: int64 not null
+htsoft2_new_RelativeBal_up: float not null
+nsoftjets5_new_RelativeBal_up: int64 not null
+htsoft5_new_RelativeBal_up: float not null
+nsoftjets2_RelativeBal_up: int64 not null
+htsoft2_RelativeBal_up: float not null
+nsoftjets5_RelativeBal_up: int64 not null
+htsoft5_RelativeBal_up: float not null
+nBtagLoose_RelativeBal_up: int64 not null
+nBtagMedium_RelativeBal_up: int64 not null
+jet1_pt_RelativeSample_2018_up: double
+jet1_eta_RelativeSample_2018_up: double
+jet1_rapidity_RelativeSample_2018_up: double
+jet1_phi_RelativeSample_2018_up: double
+jet1_qgl_RelativeSample_2018_up: float
+jet1_btagPNetQvG_RelativeSample_2018_up: float
+jet1_btagDeepFlavQG_RelativeSample_2018_up: float
+jet1_jetId_RelativeSample_2018_up: uint8
+jet1_puId_RelativeSample_2018_up: uint8
+jet1_mass_RelativeSample_2018_up: double
+jet1_area_RelativeSample_2018_up: float
+jet2_pt_RelativeSample_2018_up: double
+jet2_eta_RelativeSample_2018_up: double
+jet2_rapidity_RelativeSample_2018_up: double
+jet2_phi_RelativeSample_2018_up: double
+jet2_qgl_RelativeSample_2018_up: float
+jet2_btagPNetQvG_RelativeSample_2018_up: float
+jet2_btagDeepFlavQG_RelativeSample_2018_up: float
+jet2_jetId_RelativeSample_2018_up: uint8
+jet2_puId_RelativeSample_2018_up: uint8
+jet2_mass_RelativeSample_2018_up: double
+jet2_area_RelativeSample_2018_up: float
+jet3_pt_RelativeSample_2018_up: double
+jet3_eta_RelativeSample_2018_up: double
+jet3_rapidity_RelativeSample_2018_up: double
+jet3_phi_RelativeSample_2018_up: double
+jet3_qgl_RelativeSample_2018_up: float
+jet3_btagPNetQvG_RelativeSample_2018_up: float
+jet3_btagDeepFlavQG_RelativeSample_2018_up: float
+jet3_jetId_RelativeSample_2018_up: uint8
+jet3_puId_RelativeSample_2018_up: uint8
+jet3_mass_RelativeSample_2018_up: double
+jet3_area_RelativeSample_2018_up: float
+jet4_pt_RelativeSample_2018_up: double
+jet4_eta_RelativeSample_2018_up: double
+jet4_rapidity_RelativeSample_2018_up: double
+jet4_phi_RelativeSample_2018_up: double
+jet4_qgl_RelativeSample_2018_up: float
+jet4_btagPNetQvG_RelativeSample_2018_up: float
+jet4_btagDeepFlavQG_RelativeSample_2018_up: float
+jet4_jetId_RelativeSample_2018_up: uint8
+jet4_puId_RelativeSample_2018_up: uint8
+jet4_mass_RelativeSample_2018_up: double
+jet4_area_RelativeSample_2018_up: float
+jj_mass_RelativeSample_2018_up: double
+jj_mass_log_RelativeSample_2018_up: double
+jj_pt_RelativeSample_2018_up: double
+jj_eta_RelativeSample_2018_up: double
+jj_phi_RelativeSample_2018_up: double
+jj_dEta_RelativeSample_2018_up: double
+jj_dPhi_RelativeSample_2018_up: double
+mmj1_dEta_RelativeSample_2018_up: double
+mmj1_dPhi_RelativeSample_2018_up: double
+mmj1_dR_RelativeSample_2018_up: double
+mmj2_dEta_RelativeSample_2018_up: double
+mmj2_dPhi_RelativeSample_2018_up: double
+mmj2_dR_RelativeSample_2018_up: double
+mmj_min_dEta_RelativeSample_2018_up: double
+mmj_min_dPhi_RelativeSample_2018_up: double
+mmjj_pt_RelativeSample_2018_up: double
+mmjj_eta_RelativeSample_2018_up: double
+mmjj_phi_RelativeSample_2018_up: double
+mmjj_mass_RelativeSample_2018_up: double
+rpt_RelativeSample_2018_up: double
+pt_centrality_RelativeSample_2018_up: double
+zeppenfeld_RelativeSample_2018_up: double
+ll_zstar_log_RelativeSample_2018_up: double
+njets_RelativeSample_2018_up: int64 not null
+nsoftjets2_new_RelativeSample_2018_up: int64 not null
+htsoft2_new_RelativeSample_2018_up: float not null
+nsoftjets5_new_RelativeSample_2018_up: int64 not null
+htsoft5_new_RelativeSample_2018_up: float not null
+nsoftjets2_RelativeSample_2018_up: int64 not null
+htsoft2_RelativeSample_2018_up: float not null
+nsoftjets5_RelativeSample_2018_up: int64 not null
+htsoft5_RelativeSample_2018_up: float not null
+nBtagLoose_RelativeSample_2018_up: int64 not null
+nBtagMedium_RelativeSample_2018_up: int64 not null
+jet1_pt_FlavorQCD_up: double
+jet1_eta_FlavorQCD_up: double
+jet1_rapidity_FlavorQCD_up: double
+jet1_phi_FlavorQCD_up: double
+jet1_qgl_FlavorQCD_up: float
+jet1_btagPNetQvG_FlavorQCD_up: float
+jet1_btagDeepFlavQG_FlavorQCD_up: float
+jet1_jetId_FlavorQCD_up: uint8
+jet1_puId_FlavorQCD_up: uint8
+jet1_mass_FlavorQCD_up: double
+jet1_area_FlavorQCD_up: float
+jet2_pt_FlavorQCD_up: double
+jet2_eta_FlavorQCD_up: double
+jet2_rapidity_FlavorQCD_up: double
+jet2_phi_FlavorQCD_up: double
+jet2_qgl_FlavorQCD_up: float
+jet2_btagPNetQvG_FlavorQCD_up: float
+jet2_btagDeepFlavQG_FlavorQCD_up: float
+jet2_jetId_FlavorQCD_up: uint8
+jet2_puId_FlavorQCD_up: uint8
+jet2_mass_FlavorQCD_up: double
+jet2_area_FlavorQCD_up: float
+jet3_pt_FlavorQCD_up: double
+jet3_eta_FlavorQCD_up: double
+jet3_rapidity_FlavorQCD_up: double
+jet3_phi_FlavorQCD_up: double
+jet3_qgl_FlavorQCD_up: float
+jet3_btagPNetQvG_FlavorQCD_up: float
+jet3_btagDeepFlavQG_FlavorQCD_up: float
+jet3_jetId_FlavorQCD_up: uint8
+jet3_puId_FlavorQCD_up: uint8
+jet3_mass_FlavorQCD_up: double
+jet3_area_FlavorQCD_up: float
+jet4_pt_FlavorQCD_up: double
+jet4_eta_FlavorQCD_up: double
+jet4_rapidity_FlavorQCD_up: double
+jet4_phi_FlavorQCD_up: double
+jet4_qgl_FlavorQCD_up: float
+jet4_btagPNetQvG_FlavorQCD_up: float
+jet4_btagDeepFlavQG_FlavorQCD_up: float
+jet4_jetId_FlavorQCD_up: uint8
+jet4_puId_FlavorQCD_up: uint8
+jet4_mass_FlavorQCD_up: double
+jet4_area_FlavorQCD_up: float
+jj_mass_FlavorQCD_up: double
+jj_mass_log_FlavorQCD_up: double
+jj_pt_FlavorQCD_up: double
+jj_eta_FlavorQCD_up: double
+jj_phi_FlavorQCD_up: double
+jj_dEta_FlavorQCD_up: double
+jj_dPhi_FlavorQCD_up: double
+mmj1_dEta_FlavorQCD_up: double
+mmj1_dPhi_FlavorQCD_up: double
+mmj1_dR_FlavorQCD_up: double
+mmj2_dEta_FlavorQCD_up: double
+mmj2_dPhi_FlavorQCD_up: double
+mmj2_dR_FlavorQCD_up: double
+mmj_min_dEta_FlavorQCD_up: double
+mmj_min_dPhi_FlavorQCD_up: double
+mmjj_pt_FlavorQCD_up: double
+mmjj_eta_FlavorQCD_up: double
+mmjj_phi_FlavorQCD_up: double
+mmjj_mass_FlavorQCD_up: double
+rpt_FlavorQCD_up: double
+pt_centrality_FlavorQCD_up: double
+zeppenfeld_FlavorQCD_up: double
+ll_zstar_log_FlavorQCD_up: double
+njets_FlavorQCD_up: int64 not null
+nsoftjets2_new_FlavorQCD_up: int64 not null
+htsoft2_new_FlavorQCD_up: float not null
+nsoftjets5_new_FlavorQCD_up: int64 not null
+htsoft5_new_FlavorQCD_up: float not null
+nsoftjets2_FlavorQCD_up: int64 not null
+htsoft2_FlavorQCD_up: float not null
+nsoftjets5_FlavorQCD_up: int64 not null
+htsoft5_FlavorQCD_up: float not null
+nBtagLoose_FlavorQCD_up: int64 not null
+nBtagMedium_FlavorQCD_up: int64 not null
+jet1_pt_Absolute_down: double
+jet1_eta_Absolute_down: double
+jet1_rapidity_Absolute_down: double
+jet1_phi_Absolute_down: double
+jet1_qgl_Absolute_down: float
+jet1_btagPNetQvG_Absolute_down: float
+jet1_btagDeepFlavQG_Absolute_down: float
+jet1_jetId_Absolute_down: uint8
+jet1_puId_Absolute_down: uint8
+jet1_mass_Absolute_down: double
+jet1_area_Absolute_down: float
+jet2_pt_Absolute_down: double
+jet2_eta_Absolute_down: double
+jet2_rapidity_Absolute_down: double
+jet2_phi_Absolute_down: double
+jet2_qgl_Absolute_down: float
+jet2_btagPNetQvG_Absolute_down: float
+jet2_btagDeepFlavQG_Absolute_down: float
+jet2_jetId_Absolute_down: uint8
+jet2_puId_Absolute_down: uint8
+jet2_mass_Absolute_down: double
+jet2_area_Absolute_down: float
+jet3_pt_Absolute_down: double
+jet3_eta_Absolute_down: double
+jet3_rapidity_Absolute_down: double
+jet3_phi_Absolute_down: double
+jet3_qgl_Absolute_down: float
+jet3_btagPNetQvG_Absolute_down: float
+jet3_btagDeepFlavQG_Absolute_down: float
+jet3_jetId_Absolute_down: uint8
+jet3_puId_Absolute_down: uint8
+jet3_mass_Absolute_down: double
+jet3_area_Absolute_down: float
+jet4_pt_Absolute_down: double
+jet4_eta_Absolute_down: double
+jet4_rapidity_Absolute_down: double
+jet4_phi_Absolute_down: double
+jet4_qgl_Absolute_down: float
+jet4_btagPNetQvG_Absolute_down: float
+jet4_btagDeepFlavQG_Absolute_down: float
+jet4_jetId_Absolute_down: uint8
+jet4_puId_Absolute_down: uint8
+jet4_mass_Absolute_down: double
+jet4_area_Absolute_down: float
+jj_mass_Absolute_down: double
+jj_mass_log_Absolute_down: double
+jj_pt_Absolute_down: double
+jj_eta_Absolute_down: double
+jj_phi_Absolute_down: double
+jj_dEta_Absolute_down: double
+jj_dPhi_Absolute_down: double
+mmj1_dEta_Absolute_down: double
+mmj1_dPhi_Absolute_down: double
+mmj1_dR_Absolute_down: double
+mmj2_dEta_Absolute_down: double
+mmj2_dPhi_Absolute_down: double
+mmj2_dR_Absolute_down: double
+mmj_min_dEta_Absolute_down: double
+mmj_min_dPhi_Absolute_down: double
+mmjj_pt_Absolute_down: double
+mmjj_eta_Absolute_down: double
+mmjj_phi_Absolute_down: double
+mmjj_mass_Absolute_down: double
+rpt_Absolute_down: double
+pt_centrality_Absolute_down: double
+zeppenfeld_Absolute_down: double
+ll_zstar_log_Absolute_down: double
+njets_Absolute_down: int64 not null
+nsoftjets2_new_Absolute_down: int64 not null
+htsoft2_new_Absolute_down: float not null
+nsoftjets5_new_Absolute_down: int64 not null
+htsoft5_new_Absolute_down: float not null
+nsoftjets2_Absolute_down: int64 not null
+htsoft2_Absolute_down: float not null
+nsoftjets5_Absolute_down: int64 not null
+htsoft5_Absolute_down: float not null
+nBtagLoose_Absolute_down: int64 not null
+nBtagMedium_Absolute_down: int64 not null
+jet1_pt_Absolute_2018_down: double
+jet1_eta_Absolute_2018_down: double
+jet1_rapidity_Absolute_2018_down: double
+jet1_phi_Absolute_2018_down: double
+jet1_qgl_Absolute_2018_down: float
+jet1_btagPNetQvG_Absolute_2018_down: float
+jet1_btagDeepFlavQG_Absolute_2018_down: float
+jet1_jetId_Absolute_2018_down: uint8
+jet1_puId_Absolute_2018_down: uint8
+jet1_mass_Absolute_2018_down: double
+jet1_area_Absolute_2018_down: float
+jet2_pt_Absolute_2018_down: double
+jet2_eta_Absolute_2018_down: double
+jet2_rapidity_Absolute_2018_down: double
+jet2_phi_Absolute_2018_down: double
+jet2_qgl_Absolute_2018_down: float
+jet2_btagPNetQvG_Absolute_2018_down: float
+jet2_btagDeepFlavQG_Absolute_2018_down: float
+jet2_jetId_Absolute_2018_down: uint8
+jet2_puId_Absolute_2018_down: uint8
+jet2_mass_Absolute_2018_down: double
+jet2_area_Absolute_2018_down: float
+jet3_pt_Absolute_2018_down: double
+jet3_eta_Absolute_2018_down: double
+jet3_rapidity_Absolute_2018_down: double
+jet3_phi_Absolute_2018_down: double
+jet3_qgl_Absolute_2018_down: float
+jet3_btagPNetQvG_Absolute_2018_down: float
+jet3_btagDeepFlavQG_Absolute_2018_down: float
+jet3_jetId_Absolute_2018_down: uint8
+jet3_puId_Absolute_2018_down: uint8
+jet3_mass_Absolute_2018_down: double
+jet3_area_Absolute_2018_down: float
+jet4_pt_Absolute_2018_down: double
+jet4_eta_Absolute_2018_down: double
+jet4_rapidity_Absolute_2018_down: double
+jet4_phi_Absolute_2018_down: double
+jet4_qgl_Absolute_2018_down: float
+jet4_btagPNetQvG_Absolute_2018_down: float
+jet4_btagDeepFlavQG_Absolute_2018_down: float
+jet4_jetId_Absolute_2018_down: uint8
+jet4_puId_Absolute_2018_down: uint8
+jet4_mass_Absolute_2018_down: double
+jet4_area_Absolute_2018_down: float
+jj_mass_Absolute_2018_down: double
+jj_mass_log_Absolute_2018_down: double
+jj_pt_Absolute_2018_down: double
+jj_eta_Absolute_2018_down: double
+jj_phi_Absolute_2018_down: double
+jj_dEta_Absolute_2018_down: double
+jj_dPhi_Absolute_2018_down: double
+mmj1_dEta_Absolute_2018_down: double
+mmj1_dPhi_Absolute_2018_down: double
+mmj1_dR_Absolute_2018_down: double
+mmj2_dEta_Absolute_2018_down: double
+mmj2_dPhi_Absolute_2018_down: double
+mmj2_dR_Absolute_2018_down: double
+mmj_min_dEta_Absolute_2018_down: double
+mmj_min_dPhi_Absolute_2018_down: double
+mmjj_pt_Absolute_2018_down: double
+mmjj_eta_Absolute_2018_down: double
+mmjj_phi_Absolute_2018_down: double
+mmjj_mass_Absolute_2018_down: double
+rpt_Absolute_2018_down: double
+pt_centrality_Absolute_2018_down: double
+zeppenfeld_Absolute_2018_down: double
+ll_zstar_log_Absolute_2018_down: double
+njets_Absolute_2018_down: int64 not null
+nsoftjets2_new_Absolute_2018_down: int64 not null
+htsoft2_new_Absolute_2018_down: float not null
+nsoftjets5_new_Absolute_2018_down: int64 not null
+htsoft5_new_Absolute_2018_down: float not null
+nsoftjets2_Absolute_2018_down: int64 not null
+htsoft2_Absolute_2018_down: float not null
+nsoftjets5_Absolute_2018_down: int64 not null
+htsoft5_Absolute_2018_down: float not null
+nBtagLoose_Absolute_2018_down: int64 not null
+nBtagMedium_Absolute_2018_down: int64 not null
+jet1_pt_BBEC1_down: double
+jet1_eta_BBEC1_down: double
+jet1_rapidity_BBEC1_down: double
+jet1_phi_BBEC1_down: double
+jet1_qgl_BBEC1_down: float
+jet1_btagPNetQvG_BBEC1_down: float
+jet1_btagDeepFlavQG_BBEC1_down: float
+jet1_jetId_BBEC1_down: uint8
+jet1_puId_BBEC1_down: uint8
+jet1_mass_BBEC1_down: double
+jet1_area_BBEC1_down: float
+jet2_pt_BBEC1_down: double
+jet2_eta_BBEC1_down: double
+jet2_rapidity_BBEC1_down: double
+jet2_phi_BBEC1_down: double
+jet2_qgl_BBEC1_down: float
+jet2_btagPNetQvG_BBEC1_down: float
+jet2_btagDeepFlavQG_BBEC1_down: float
+jet2_jetId_BBEC1_down: uint8
+jet2_puId_BBEC1_down: uint8
+jet2_mass_BBEC1_down: double
+jet2_area_BBEC1_down: float
+jet3_pt_BBEC1_down: double
+jet3_eta_BBEC1_down: double
+jet3_rapidity_BBEC1_down: double
+jet3_phi_BBEC1_down: double
+jet3_qgl_BBEC1_down: float
+jet3_btagPNetQvG_BBEC1_down: float
+jet3_btagDeepFlavQG_BBEC1_down: float
+jet3_jetId_BBEC1_down: uint8
+jet3_puId_BBEC1_down: uint8
+jet3_mass_BBEC1_down: double
+jet3_area_BBEC1_down: float
+jet4_pt_BBEC1_down: double
+jet4_eta_BBEC1_down: double
+jet4_rapidity_BBEC1_down: double
+jet4_phi_BBEC1_down: double
+jet4_qgl_BBEC1_down: float
+jet4_btagPNetQvG_BBEC1_down: float
+jet4_btagDeepFlavQG_BBEC1_down: float
+jet4_jetId_BBEC1_down: uint8
+jet4_puId_BBEC1_down: uint8
+jet4_mass_BBEC1_down: double
+jet4_area_BBEC1_down: float
+jj_mass_BBEC1_down: double
+jj_mass_log_BBEC1_down: double
+jj_pt_BBEC1_down: double
+jj_eta_BBEC1_down: double
+jj_phi_BBEC1_down: double
+jj_dEta_BBEC1_down: double
+jj_dPhi_BBEC1_down: double
+mmj1_dEta_BBEC1_down: double
+mmj1_dPhi_BBEC1_down: double
+mmj1_dR_BBEC1_down: double
+mmj2_dEta_BBEC1_down: double
+mmj2_dPhi_BBEC1_down: double
+mmj2_dR_BBEC1_down: double
+mmj_min_dEta_BBEC1_down: double
+mmj_min_dPhi_BBEC1_down: double
+mmjj_pt_BBEC1_down: double
+mmjj_eta_BBEC1_down: double
+mmjj_phi_BBEC1_down: double
+mmjj_mass_BBEC1_down: double
+rpt_BBEC1_down: double
+pt_centrality_BBEC1_down: double
+zeppenfeld_BBEC1_down: double
+ll_zstar_log_BBEC1_down: double
+njets_BBEC1_down: int64 not null
+nsoftjets2_new_BBEC1_down: int64 not null
+htsoft2_new_BBEC1_down: float not null
+nsoftjets5_new_BBEC1_down: int64 not null
+htsoft5_new_BBEC1_down: float not null
+nsoftjets2_BBEC1_down: int64 not null
+htsoft2_BBEC1_down: float not null
+nsoftjets5_BBEC1_down: int64 not null
+htsoft5_BBEC1_down: float not null
+nBtagLoose_BBEC1_down: int64 not null
+nBtagMedium_BBEC1_down: int64 not null
+jet1_pt_BBEC1_2018_down: double
+jet1_eta_BBEC1_2018_down: double
+jet1_rapidity_BBEC1_2018_down: double
+jet1_phi_BBEC1_2018_down: double
+jet1_qgl_BBEC1_2018_down: float
+jet1_btagPNetQvG_BBEC1_2018_down: float
+jet1_btagDeepFlavQG_BBEC1_2018_down: float
+jet1_jetId_BBEC1_2018_down: uint8
+jet1_puId_BBEC1_2018_down: uint8
+jet1_mass_BBEC1_2018_down: double
+jet1_area_BBEC1_2018_down: float
+jet2_pt_BBEC1_2018_down: double
+jet2_eta_BBEC1_2018_down: double
+jet2_rapidity_BBEC1_2018_down: double
+jet2_phi_BBEC1_2018_down: double
+jet2_qgl_BBEC1_2018_down: float
+jet2_btagPNetQvG_BBEC1_2018_down: float
+jet2_btagDeepFlavQG_BBEC1_2018_down: float
+jet2_jetId_BBEC1_2018_down: uint8
+jet2_puId_BBEC1_2018_down: uint8
+jet2_mass_BBEC1_2018_down: double
+jet2_area_BBEC1_2018_down: float
+jet3_pt_BBEC1_2018_down: double
+jet3_eta_BBEC1_2018_down: double
+jet3_rapidity_BBEC1_2018_down: double
+jet3_phi_BBEC1_2018_down: double
+jet3_qgl_BBEC1_2018_down: float
+jet3_btagPNetQvG_BBEC1_2018_down: float
+jet3_btagDeepFlavQG_BBEC1_2018_down: float
+jet3_jetId_BBEC1_2018_down: uint8
+jet3_puId_BBEC1_2018_down: uint8
+jet3_mass_BBEC1_2018_down: double
+jet3_area_BBEC1_2018_down: float
+jet4_pt_BBEC1_2018_down: double
+jet4_eta_BBEC1_2018_down: double
+jet4_rapidity_BBEC1_2018_down: double
+jet4_phi_BBEC1_2018_down: double
+jet4_qgl_BBEC1_2018_down: float
+jet4_btagPNetQvG_BBEC1_2018_down: float
+jet4_btagDeepFlavQG_BBEC1_2018_down: float
+jet4_jetId_BBEC1_2018_down: uint8
+jet4_puId_BBEC1_2018_down: uint8
+jet4_mass_BBEC1_2018_down: double
+jet4_area_BBEC1_2018_down: float
+jj_mass_BBEC1_2018_down: double
+jj_mass_log_BBEC1_2018_down: double
+jj_pt_BBEC1_2018_down: double
+jj_eta_BBEC1_2018_down: double
+jj_phi_BBEC1_2018_down: double
+jj_dEta_BBEC1_2018_down: double
+jj_dPhi_BBEC1_2018_down: double
+mmj1_dEta_BBEC1_2018_down: double
+mmj1_dPhi_BBEC1_2018_down: double
+mmj1_dR_BBEC1_2018_down: double
+mmj2_dEta_BBEC1_2018_down: double
+mmj2_dPhi_BBEC1_2018_down: double
+mmj2_dR_BBEC1_2018_down: double
+mmj_min_dEta_BBEC1_2018_down: double
+mmj_min_dPhi_BBEC1_2018_down: double
+mmjj_pt_BBEC1_2018_down: double
+mmjj_eta_BBEC1_2018_down: double
+mmjj_phi_BBEC1_2018_down: double
+mmjj_mass_BBEC1_2018_down: double
+rpt_BBEC1_2018_down: double
+pt_centrality_BBEC1_2018_down: double
+zeppenfeld_BBEC1_2018_down: double
+ll_zstar_log_BBEC1_2018_down: double
+njets_BBEC1_2018_down: int64 not null
+nsoftjets2_new_BBEC1_2018_down: int64 not null
+htsoft2_new_BBEC1_2018_down: float not null
+nsoftjets5_new_BBEC1_2018_down: int64 not null
+htsoft5_new_BBEC1_2018_down: float not null
+nsoftjets2_BBEC1_2018_down: int64 not null
+htsoft2_BBEC1_2018_down: float not null
+nsoftjets5_BBEC1_2018_down: int64 not null
+htsoft5_BBEC1_2018_down: float not null
+nBtagLoose_BBEC1_2018_down: int64 not null
+nBtagMedium_BBEC1_2018_down: int64 not null
+jet1_pt_EC2_down: double
+jet1_eta_EC2_down: double
+jet1_rapidity_EC2_down: double
+jet1_phi_EC2_down: double
+jet1_qgl_EC2_down: float
+jet1_btagPNetQvG_EC2_down: float
+jet1_btagDeepFlavQG_EC2_down: float
+jet1_jetId_EC2_down: uint8
+jet1_puId_EC2_down: uint8
+jet1_mass_EC2_down: double
+jet1_area_EC2_down: float
+jet2_pt_EC2_down: double
+jet2_eta_EC2_down: double
+jet2_rapidity_EC2_down: double
+jet2_phi_EC2_down: double
+jet2_qgl_EC2_down: float
+jet2_btagPNetQvG_EC2_down: float
+jet2_btagDeepFlavQG_EC2_down: float
+jet2_jetId_EC2_down: uint8
+jet2_puId_EC2_down: uint8
+jet2_mass_EC2_down: double
+jet2_area_EC2_down: float
+jet3_pt_EC2_down: double
+jet3_eta_EC2_down: double
+jet3_rapidity_EC2_down: double
+jet3_phi_EC2_down: double
+jet3_qgl_EC2_down: float
+jet3_btagPNetQvG_EC2_down: float
+jet3_btagDeepFlavQG_EC2_down: float
+jet3_jetId_EC2_down: uint8
+jet3_puId_EC2_down: uint8
+jet3_mass_EC2_down: double
+jet3_area_EC2_down: float
+jet4_pt_EC2_down: double
+jet4_eta_EC2_down: double
+jet4_rapidity_EC2_down: double
+jet4_phi_EC2_down: double
+jet4_qgl_EC2_down: float
+jet4_btagPNetQvG_EC2_down: float
+jet4_btagDeepFlavQG_EC2_down: float
+jet4_jetId_EC2_down: uint8
+jet4_puId_EC2_down: uint8
+jet4_mass_EC2_down: double
+jet4_area_EC2_down: float
+jj_mass_EC2_down: double
+jj_mass_log_EC2_down: double
+jj_pt_EC2_down: double
+jj_eta_EC2_down: double
+jj_phi_EC2_down: double
+jj_dEta_EC2_down: double
+jj_dPhi_EC2_down: double
+mmj1_dEta_EC2_down: double
+mmj1_dPhi_EC2_down: double
+mmj1_dR_EC2_down: double
+mmj2_dEta_EC2_down: double
+mmj2_dPhi_EC2_down: double
+mmj2_dR_EC2_down: double
+mmj_min_dEta_EC2_down: double
+mmj_min_dPhi_EC2_down: double
+mmjj_pt_EC2_down: double
+mmjj_eta_EC2_down: double
+mmjj_phi_EC2_down: double
+mmjj_mass_EC2_down: double
+rpt_EC2_down: double
+pt_centrality_EC2_down: double
+zeppenfeld_EC2_down: double
+ll_zstar_log_EC2_down: double
+njets_EC2_down: int64 not null
+nsoftjets2_new_EC2_down: int64 not null
+htsoft2_new_EC2_down: float not null
+nsoftjets5_new_EC2_down: int64 not null
+htsoft5_new_EC2_down: float not null
+nsoftjets2_EC2_down: int64 not null
+htsoft2_EC2_down: float not null
+nsoftjets5_EC2_down: int64 not null
+htsoft5_EC2_down: float not null
+nBtagLoose_EC2_down: int64 not null
+nBtagMedium_EC2_down: int64 not null
+jet1_pt_EC2_2018_down: double
+jet1_eta_EC2_2018_down: double
+jet1_rapidity_EC2_2018_down: double
+jet1_phi_EC2_2018_down: double
+jet1_qgl_EC2_2018_down: float
+jet1_btagPNetQvG_EC2_2018_down: float
+jet1_btagDeepFlavQG_EC2_2018_down: float
+jet1_jetId_EC2_2018_down: uint8
+jet1_puId_EC2_2018_down: uint8
+jet1_mass_EC2_2018_down: double
+jet1_area_EC2_2018_down: float
+jet2_pt_EC2_2018_down: double
+jet2_eta_EC2_2018_down: double
+jet2_rapidity_EC2_2018_down: double
+jet2_phi_EC2_2018_down: double
+jet2_qgl_EC2_2018_down: float
+jet2_btagPNetQvG_EC2_2018_down: float
+jet2_btagDeepFlavQG_EC2_2018_down: float
+jet2_jetId_EC2_2018_down: uint8
+jet2_puId_EC2_2018_down: uint8
+jet2_mass_EC2_2018_down: double
+jet2_area_EC2_2018_down: float
+jet3_pt_EC2_2018_down: double
+jet3_eta_EC2_2018_down: double
+jet3_rapidity_EC2_2018_down: double
+jet3_phi_EC2_2018_down: double
+jet3_qgl_EC2_2018_down: float
+jet3_btagPNetQvG_EC2_2018_down: float
+jet3_btagDeepFlavQG_EC2_2018_down: float
+jet3_jetId_EC2_2018_down: uint8
+jet3_puId_EC2_2018_down: uint8
+jet3_mass_EC2_2018_down: double
+jet3_area_EC2_2018_down: float
+jet4_pt_EC2_2018_down: double
+jet4_eta_EC2_2018_down: double
+jet4_rapidity_EC2_2018_down: double
+jet4_phi_EC2_2018_down: double
+jet4_qgl_EC2_2018_down: float
+jet4_btagPNetQvG_EC2_2018_down: float
+jet4_btagDeepFlavQG_EC2_2018_down: float
+jet4_jetId_EC2_2018_down: uint8
+jet4_puId_EC2_2018_down: uint8
+jet4_mass_EC2_2018_down: double
+jet4_area_EC2_2018_down: float
+jj_mass_EC2_2018_down: double
+jj_mass_log_EC2_2018_down: double
+jj_pt_EC2_2018_down: double
+jj_eta_EC2_2018_down: double
+jj_phi_EC2_2018_down: double
+jj_dEta_EC2_2018_down: double
+jj_dPhi_EC2_2018_down: double
+mmj1_dEta_EC2_2018_down: double
+mmj1_dPhi_EC2_2018_down: double
+mmj1_dR_EC2_2018_down: double
+mmj2_dEta_EC2_2018_down: double
+mmj2_dPhi_EC2_2018_down: double
+mmj2_dR_EC2_2018_down: double
+mmj_min_dEta_EC2_2018_down: double
+mmj_min_dPhi_EC2_2018_down: double
+mmjj_pt_EC2_2018_down: double
+mmjj_eta_EC2_2018_down: double
+mmjj_phi_EC2_2018_down: double
+mmjj_mass_EC2_2018_down: double
+rpt_EC2_2018_down: double
+pt_centrality_EC2_2018_down: double
+zeppenfeld_EC2_2018_down: double
+ll_zstar_log_EC2_2018_down: double
+njets_EC2_2018_down: int64 not null
+nsoftjets2_new_EC2_2018_down: int64 not null
+htsoft2_new_EC2_2018_down: float not null
+nsoftjets5_new_EC2_2018_down: int64 not null
+htsoft5_new_EC2_2018_down: float not null
+nsoftjets2_EC2_2018_down: int64 not null
+htsoft2_EC2_2018_down: float not null
+nsoftjets5_EC2_2018_down: int64 not null
+htsoft5_EC2_2018_down: float not null
+nBtagLoose_EC2_2018_down: int64 not null
+nBtagMedium_EC2_2018_down: int64 not null
+jet1_pt_HF_down: double
+jet1_eta_HF_down: double
+jet1_rapidity_HF_down: double
+jet1_phi_HF_down: double
+jet1_qgl_HF_down: float
+jet1_btagPNetQvG_HF_down: float
+jet1_btagDeepFlavQG_HF_down: float
+jet1_jetId_HF_down: uint8
+jet1_puId_HF_down: uint8
+jet1_mass_HF_down: double
+jet1_area_HF_down: float
+jet2_pt_HF_down: double
+jet2_eta_HF_down: double
+jet2_rapidity_HF_down: double
+jet2_phi_HF_down: double
+jet2_qgl_HF_down: float
+jet2_btagPNetQvG_HF_down: float
+jet2_btagDeepFlavQG_HF_down: float
+jet2_jetId_HF_down: uint8
+jet2_puId_HF_down: uint8
+jet2_mass_HF_down: double
+jet2_area_HF_down: float
+jet3_pt_HF_down: double
+jet3_eta_HF_down: double
+jet3_rapidity_HF_down: double
+jet3_phi_HF_down: double
+jet3_qgl_HF_down: float
+jet3_btagPNetQvG_HF_down: float
+jet3_btagDeepFlavQG_HF_down: float
+jet3_jetId_HF_down: uint8
+jet3_puId_HF_down: uint8
+jet3_mass_HF_down: double
+jet3_area_HF_down: float
+jet4_pt_HF_down: double
+jet4_eta_HF_down: double
+jet4_rapidity_HF_down: double
+jet4_phi_HF_down: double
+jet4_qgl_HF_down: float
+jet4_btagPNetQvG_HF_down: float
+jet4_btagDeepFlavQG_HF_down: float
+jet4_jetId_HF_down: uint8
+jet4_puId_HF_down: uint8
+jet4_mass_HF_down: double
+jet4_area_HF_down: float
+jj_mass_HF_down: double
+jj_mass_log_HF_down: double
+jj_pt_HF_down: double
+jj_eta_HF_down: double
+jj_phi_HF_down: double
+jj_dEta_HF_down: double
+jj_dPhi_HF_down: double
+mmj1_dEta_HF_down: double
+mmj1_dPhi_HF_down: double
+mmj1_dR_HF_down: double
+mmj2_dEta_HF_down: double
+mmj2_dPhi_HF_down: double
+mmj2_dR_HF_down: double
+mmj_min_dEta_HF_down: double
+mmj_min_dPhi_HF_down: double
+mmjj_pt_HF_down: double
+mmjj_eta_HF_down: double
+mmjj_phi_HF_down: double
+mmjj_mass_HF_down: double
+rpt_HF_down: double
+pt_centrality_HF_down: double
+zeppenfeld_HF_down: double
+ll_zstar_log_HF_down: double
+njets_HF_down: int64 not null
+nsoftjets2_new_HF_down: int64 not null
+htsoft2_new_HF_down: float not null
+nsoftjets5_new_HF_down: int64 not null
+htsoft5_new_HF_down: float not null
+nsoftjets2_HF_down: int64 not null
+htsoft2_HF_down: float not null
+nsoftjets5_HF_down: int64 not null
+htsoft5_HF_down: float not null
+nBtagLoose_HF_down: int64 not null
+nBtagMedium_HF_down: int64 not null
+jet1_pt_HF_2018_down: double
+jet1_eta_HF_2018_down: double
+jet1_rapidity_HF_2018_down: double
+jet1_phi_HF_2018_down: double
+jet1_qgl_HF_2018_down: float
+jet1_btagPNetQvG_HF_2018_down: float
+jet1_btagDeepFlavQG_HF_2018_down: float
+jet1_jetId_HF_2018_down: uint8
+jet1_puId_HF_2018_down: uint8
+jet1_mass_HF_2018_down: double
+jet1_area_HF_2018_down: float
+jet2_pt_HF_2018_down: double
+jet2_eta_HF_2018_down: double
+jet2_rapidity_HF_2018_down: double
+jet2_phi_HF_2018_down: double
+jet2_qgl_HF_2018_down: float
+jet2_btagPNetQvG_HF_2018_down: float
+jet2_btagDeepFlavQG_HF_2018_down: float
+jet2_jetId_HF_2018_down: uint8
+jet2_puId_HF_2018_down: uint8
+jet2_mass_HF_2018_down: double
+jet2_area_HF_2018_down: float
+jet3_pt_HF_2018_down: double
+jet3_eta_HF_2018_down: double
+jet3_rapidity_HF_2018_down: double
+jet3_phi_HF_2018_down: double
+jet3_qgl_HF_2018_down: float
+jet3_btagPNetQvG_HF_2018_down: float
+jet3_btagDeepFlavQG_HF_2018_down: float
+jet3_jetId_HF_2018_down: uint8
+jet3_puId_HF_2018_down: uint8
+jet3_mass_HF_2018_down: double
+jet3_area_HF_2018_down: float
+jet4_pt_HF_2018_down: double
+jet4_eta_HF_2018_down: double
+jet4_rapidity_HF_2018_down: double
+jet4_phi_HF_2018_down: double
+jet4_qgl_HF_2018_down: float
+jet4_btagPNetQvG_HF_2018_down: float
+jet4_btagDeepFlavQG_HF_2018_down: float
+jet4_jetId_HF_2018_down: uint8
+jet4_puId_HF_2018_down: uint8
+jet4_mass_HF_2018_down: double
+jet4_area_HF_2018_down: float
+jj_mass_HF_2018_down: double
+jj_mass_log_HF_2018_down: double
+jj_pt_HF_2018_down: double
+jj_eta_HF_2018_down: double
+jj_phi_HF_2018_down: double
+jj_dEta_HF_2018_down: double
+jj_dPhi_HF_2018_down: double
+mmj1_dEta_HF_2018_down: double
+mmj1_dPhi_HF_2018_down: double
+mmj1_dR_HF_2018_down: double
+mmj2_dEta_HF_2018_down: double
+mmj2_dPhi_HF_2018_down: double
+mmj2_dR_HF_2018_down: double
+mmj_min_dEta_HF_2018_down: double
+mmj_min_dPhi_HF_2018_down: double
+mmjj_pt_HF_2018_down: double
+mmjj_eta_HF_2018_down: double
+mmjj_phi_HF_2018_down: double
+mmjj_mass_HF_2018_down: double
+rpt_HF_2018_down: double
+pt_centrality_HF_2018_down: double
+zeppenfeld_HF_2018_down: double
+ll_zstar_log_HF_2018_down: double
+njets_HF_2018_down: int64 not null
+nsoftjets2_new_HF_2018_down: int64 not null
+htsoft2_new_HF_2018_down: float not null
+nsoftjets5_new_HF_2018_down: int64 not null
+htsoft5_new_HF_2018_down: float not null
+nsoftjets2_HF_2018_down: int64 not null
+htsoft2_HF_2018_down: float not null
+nsoftjets5_HF_2018_down: int64 not null
+htsoft5_HF_2018_down: float not null
+nBtagLoose_HF_2018_down: int64 not null
+nBtagMedium_HF_2018_down: int64 not null
+jet1_pt_RelativeBal_down: double
+jet1_eta_RelativeBal_down: double
+jet1_rapidity_RelativeBal_down: double
+jet1_phi_RelativeBal_down: double
+jet1_qgl_RelativeBal_down: float
+jet1_btagPNetQvG_RelativeBal_down: float
+jet1_btagDeepFlavQG_RelativeBal_down: float
+jet1_jetId_RelativeBal_down: uint8
+jet1_puId_RelativeBal_down: uint8
+jet1_mass_RelativeBal_down: double
+jet1_area_RelativeBal_down: float
+jet2_pt_RelativeBal_down: double
+jet2_eta_RelativeBal_down: double
+jet2_rapidity_RelativeBal_down: double
+jet2_phi_RelativeBal_down: double
+jet2_qgl_RelativeBal_down: float
+jet2_btagPNetQvG_RelativeBal_down: float
+jet2_btagDeepFlavQG_RelativeBal_down: float
+jet2_jetId_RelativeBal_down: uint8
+jet2_puId_RelativeBal_down: uint8
+jet2_mass_RelativeBal_down: double
+jet2_area_RelativeBal_down: float
+jet3_pt_RelativeBal_down: double
+jet3_eta_RelativeBal_down: double
+jet3_rapidity_RelativeBal_down: double
+jet3_phi_RelativeBal_down: double
+jet3_qgl_RelativeBal_down: float
+jet3_btagPNetQvG_RelativeBal_down: float
+jet3_btagDeepFlavQG_RelativeBal_down: float
+jet3_jetId_RelativeBal_down: uint8
+jet3_puId_RelativeBal_down: uint8
+jet3_mass_RelativeBal_down: double
+jet3_area_RelativeBal_down: float
+jet4_pt_RelativeBal_down: double
+jet4_eta_RelativeBal_down: double
+jet4_rapidity_RelativeBal_down: double
+jet4_phi_RelativeBal_down: double
+jet4_qgl_RelativeBal_down: float
+jet4_btagPNetQvG_RelativeBal_down: float
+jet4_btagDeepFlavQG_RelativeBal_down: float
+jet4_jetId_RelativeBal_down: uint8
+jet4_puId_RelativeBal_down: uint8
+jet4_mass_RelativeBal_down: double
+jet4_area_RelativeBal_down: float
+jj_mass_RelativeBal_down: double
+jj_mass_log_RelativeBal_down: double
+jj_pt_RelativeBal_down: double
+jj_eta_RelativeBal_down: double
+jj_phi_RelativeBal_down: double
+jj_dEta_RelativeBal_down: double
+jj_dPhi_RelativeBal_down: double
+mmj1_dEta_RelativeBal_down: double
+mmj1_dPhi_RelativeBal_down: double
+mmj1_dR_RelativeBal_down: double
+mmj2_dEta_RelativeBal_down: double
+mmj2_dPhi_RelativeBal_down: double
+mmj2_dR_RelativeBal_down: double
+mmj_min_dEta_RelativeBal_down: double
+mmj_min_dPhi_RelativeBal_down: double
+mmjj_pt_RelativeBal_down: double
+mmjj_eta_RelativeBal_down: double
+mmjj_phi_RelativeBal_down: double
+mmjj_mass_RelativeBal_down: double
+rpt_RelativeBal_down: double
+pt_centrality_RelativeBal_down: double
+zeppenfeld_RelativeBal_down: double
+ll_zstar_log_RelativeBal_down: double
+njets_RelativeBal_down: int64 not null
+nsoftjets2_new_RelativeBal_down: int64 not null
+htsoft2_new_RelativeBal_down: float not null
+nsoftjets5_new_RelativeBal_down: int64 not null
+htsoft5_new_RelativeBal_down: float not null
+nsoftjets2_RelativeBal_down: int64 not null
+htsoft2_RelativeBal_down: float not null
+nsoftjets5_RelativeBal_down: int64 not null
+htsoft5_RelativeBal_down: float not null
+nBtagLoose_RelativeBal_down: int64 not null
+nBtagMedium_RelativeBal_down: int64 not null
+jet1_pt_RelativeSample_2018_down: double
+jet1_eta_RelativeSample_2018_down: double
+jet1_rapidity_RelativeSample_2018_down: double
+jet1_phi_RelativeSample_2018_down: double
+jet1_qgl_RelativeSample_2018_down: float
+jet1_btagPNetQvG_RelativeSample_2018_down: float
+jet1_btagDeepFlavQG_RelativeSample_2018_down: float
+jet1_jetId_RelativeSample_2018_down: uint8
+jet1_puId_RelativeSample_2018_down: uint8
+jet1_mass_RelativeSample_2018_down: double
+jet1_area_RelativeSample_2018_down: float
+jet2_pt_RelativeSample_2018_down: double
+jet2_eta_RelativeSample_2018_down: double
+jet2_rapidity_RelativeSample_2018_down: double
+jet2_phi_RelativeSample_2018_down: double
+jet2_qgl_RelativeSample_2018_down: float
+jet2_btagPNetQvG_RelativeSample_2018_down: float
+jet2_btagDeepFlavQG_RelativeSample_2018_down: float
+jet2_jetId_RelativeSample_2018_down: uint8
+jet2_puId_RelativeSample_2018_down: uint8
+jet2_mass_RelativeSample_2018_down: double
+jet2_area_RelativeSample_2018_down: float
+jet3_pt_RelativeSample_2018_down: double
+jet3_eta_RelativeSample_2018_down: double
+jet3_rapidity_RelativeSample_2018_down: double
+jet3_phi_RelativeSample_2018_down: double
+jet3_qgl_RelativeSample_2018_down: float
+jet3_btagPNetQvG_RelativeSample_2018_down: float
+jet3_btagDeepFlavQG_RelativeSample_2018_down: float
+jet3_jetId_RelativeSample_2018_down: uint8
+jet3_puId_RelativeSample_2018_down: uint8
+jet3_mass_RelativeSample_2018_down: double
+jet3_area_RelativeSample_2018_down: float
+jet4_pt_RelativeSample_2018_down: double
+jet4_eta_RelativeSample_2018_down: double
+jet4_rapidity_RelativeSample_2018_down: double
+jet4_phi_RelativeSample_2018_down: double
+jet4_qgl_RelativeSample_2018_down: float
+jet4_btagPNetQvG_RelativeSample_2018_down: float
+jet4_btagDeepFlavQG_RelativeSample_2018_down: float
+jet4_jetId_RelativeSample_2018_down: uint8
+jet4_puId_RelativeSample_2018_down: uint8
+jet4_mass_RelativeSample_2018_down: double
+jet4_area_RelativeSample_2018_down: float
+jj_mass_RelativeSample_2018_down: double
+jj_mass_log_RelativeSample_2018_down: double
+jj_pt_RelativeSample_2018_down: double
+jj_eta_RelativeSample_2018_down: double
+jj_phi_RelativeSample_2018_down: double
+jj_dEta_RelativeSample_2018_down: double
+jj_dPhi_RelativeSample_2018_down: double
+mmj1_dEta_RelativeSample_2018_down: double
+mmj1_dPhi_RelativeSample_2018_down: double
+mmj1_dR_RelativeSample_2018_down: double
+mmj2_dEta_RelativeSample_2018_down: double
+mmj2_dPhi_RelativeSample_2018_down: double
+mmj2_dR_RelativeSample_2018_down: double
+mmj_min_dEta_RelativeSample_2018_down: double
+mmj_min_dPhi_RelativeSample_2018_down: double
+mmjj_pt_RelativeSample_2018_down: double
+mmjj_eta_RelativeSample_2018_down: double
+mmjj_phi_RelativeSample_2018_down: double
+mmjj_mass_RelativeSample_2018_down: double
+rpt_RelativeSample_2018_down: double
+pt_centrality_RelativeSample_2018_down: double
+zeppenfeld_RelativeSample_2018_down: double
+ll_zstar_log_RelativeSample_2018_down: double
+njets_RelativeSample_2018_down: int64 not null
+nsoftjets2_new_RelativeSample_2018_down: int64 not null
+htsoft2_new_RelativeSample_2018_down: float not null
+nsoftjets5_new_RelativeSample_2018_down: int64 not null
+htsoft5_new_RelativeSample_2018_down: float not null
+nsoftjets2_RelativeSample_2018_down: int64 not null
+htsoft2_RelativeSample_2018_down: float not null
+nsoftjets5_RelativeSample_2018_down: int64 not null
+htsoft5_RelativeSample_2018_down: float not null
+nBtagLoose_RelativeSample_2018_down: int64 not null
+nBtagMedium_RelativeSample_2018_down: int64 not null
+jet1_pt_FlavorQCD_down: double
+jet1_eta_FlavorQCD_down: double
+jet1_rapidity_FlavorQCD_down: double
+jet1_phi_FlavorQCD_down: double
+jet1_qgl_FlavorQCD_down: float
+jet1_btagPNetQvG_FlavorQCD_down: float
+jet1_btagDeepFlavQG_FlavorQCD_down: float
+jet1_jetId_FlavorQCD_down: uint8
+jet1_puId_FlavorQCD_down: uint8
+jet1_mass_FlavorQCD_down: double
+jet1_area_FlavorQCD_down: float
+jet2_pt_FlavorQCD_down: double
+jet2_eta_FlavorQCD_down: double
+jet2_rapidity_FlavorQCD_down: double
+jet2_phi_FlavorQCD_down: double
+jet2_qgl_FlavorQCD_down: float
+jet2_btagPNetQvG_FlavorQCD_down: float
+jet2_btagDeepFlavQG_FlavorQCD_down: float
+jet2_jetId_FlavorQCD_down: uint8
+jet2_puId_FlavorQCD_down: uint8
+jet2_mass_FlavorQCD_down: double
+jet2_area_FlavorQCD_down: float
+jet3_pt_FlavorQCD_down: double
+jet3_eta_FlavorQCD_down: double
+jet3_rapidity_FlavorQCD_down: double
+jet3_phi_FlavorQCD_down: double
+jet3_qgl_FlavorQCD_down: float
+jet3_btagPNetQvG_FlavorQCD_down: float
+jet3_btagDeepFlavQG_FlavorQCD_down: float
+jet3_jetId_FlavorQCD_down: uint8
+jet3_puId_FlavorQCD_down: uint8
+jet3_mass_FlavorQCD_down: double
+jet3_area_FlavorQCD_down: float
+jet4_pt_FlavorQCD_down: double
+jet4_eta_FlavorQCD_down: double
+jet4_rapidity_FlavorQCD_down: double
+jet4_phi_FlavorQCD_down: double
+jet4_qgl_FlavorQCD_down: float
+jet4_btagPNetQvG_FlavorQCD_down: float
+jet4_btagDeepFlavQG_FlavorQCD_down: float
+jet4_jetId_FlavorQCD_down: uint8
+jet4_puId_FlavorQCD_down: uint8
+jet4_mass_FlavorQCD_down: double
+jet4_area_FlavorQCD_down: float
+jj_mass_FlavorQCD_down: double
+jj_mass_log_FlavorQCD_down: double
+jj_pt_FlavorQCD_down: double
+jj_eta_FlavorQCD_down: double
+jj_phi_FlavorQCD_down: double
+jj_dEta_FlavorQCD_down: double
+jj_dPhi_FlavorQCD_down: double
+mmj1_dEta_FlavorQCD_down: double
+mmj1_dPhi_FlavorQCD_down: double
+mmj1_dR_FlavorQCD_down: double
+mmj2_dEta_FlavorQCD_down: double
+mmj2_dPhi_FlavorQCD_down: double
+mmj2_dR_FlavorQCD_down: double
+mmj_min_dEta_FlavorQCD_down: double
+mmj_min_dPhi_FlavorQCD_down: double
+mmjj_pt_FlavorQCD_down: double
+mmjj_eta_FlavorQCD_down: double
+mmjj_phi_FlavorQCD_down: double
+mmjj_mass_FlavorQCD_down: double
+rpt_FlavorQCD_down: double
+pt_centrality_FlavorQCD_down: double
+zeppenfeld_FlavorQCD_down: double
+ll_zstar_log_FlavorQCD_down: double
+njets_FlavorQCD_down: int64 not null
+nsoftjets2_new_FlavorQCD_down: int64 not null
+htsoft2_new_FlavorQCD_down: float not null
+nsoftjets5_new_FlavorQCD_down: int64 not null
+htsoft5_new_FlavorQCD_down: float not null
+nsoftjets2_FlavorQCD_down: int64 not null
+htsoft2_FlavorQCD_down: float not null
+nsoftjets5_FlavorQCD_down: int64 not null
+htsoft5_FlavorQCD_down: float not null
+nBtagLoose_FlavorQCD_down: int64 not null
+nBtagMedium_FlavorQCD_down: int64 not null
+jet1_pt_jer1_up: double
+jet1_eta_jer1_up: double
+jet1_rapidity_jer1_up: double
+jet1_phi_jer1_up: double
+jet1_qgl_jer1_up: float
+jet1_btagPNetQvG_jer1_up: float
+jet1_btagDeepFlavQG_jer1_up: float
+jet1_jetId_jer1_up: uint8
+jet1_puId_jer1_up: uint8
+jet1_mass_jer1_up: double
+jet1_area_jer1_up: float
+jet2_pt_jer1_up: double
+jet2_eta_jer1_up: double
+jet2_rapidity_jer1_up: double
+jet2_phi_jer1_up: double
+jet2_qgl_jer1_up: float
+jet2_btagPNetQvG_jer1_up: float
+jet2_btagDeepFlavQG_jer1_up: float
+jet2_jetId_jer1_up: uint8
+jet2_puId_jer1_up: uint8
+jet2_mass_jer1_up: double
+jet2_area_jer1_up: float
+jet3_pt_jer1_up: double
+jet3_eta_jer1_up: double
+jet3_rapidity_jer1_up: double
+jet3_phi_jer1_up: double
+jet3_qgl_jer1_up: float
+jet3_btagPNetQvG_jer1_up: float
+jet3_btagDeepFlavQG_jer1_up: float
+jet3_jetId_jer1_up: uint8
+jet3_puId_jer1_up: uint8
+jet3_mass_jer1_up: double
+jet3_area_jer1_up: float
+jet4_pt_jer1_up: double
+jet4_eta_jer1_up: double
+jet4_rapidity_jer1_up: double
+jet4_phi_jer1_up: double
+jet4_qgl_jer1_up: float
+jet4_btagPNetQvG_jer1_up: float
+jet4_btagDeepFlavQG_jer1_up: float
+jet4_jetId_jer1_up: uint8
+jet4_puId_jer1_up: uint8
+jet4_mass_jer1_up: double
+jet4_area_jer1_up: float
+jj_mass_jer1_up: double
+jj_mass_log_jer1_up: double
+jj_pt_jer1_up: double
+jj_eta_jer1_up: double
+jj_phi_jer1_up: double
+jj_dEta_jer1_up: double
+jj_dPhi_jer1_up: double
+mmj1_dEta_jer1_up: double
+mmj1_dPhi_jer1_up: double
+mmj1_dR_jer1_up: double
+mmj2_dEta_jer1_up: double
+mmj2_dPhi_jer1_up: double
+mmj2_dR_jer1_up: double
+mmj_min_dEta_jer1_up: double
+mmj_min_dPhi_jer1_up: double
+mmjj_pt_jer1_up: double
+mmjj_eta_jer1_up: double
+mmjj_phi_jer1_up: double
+mmjj_mass_jer1_up: double
+rpt_jer1_up: double
+pt_centrality_jer1_up: double
+zeppenfeld_jer1_up: double
+ll_zstar_log_jer1_up: double
+njets_jer1_up: int64 not null
+nsoftjets2_new_jer1_up: int64 not null
+htsoft2_new_jer1_up: float not null
+nsoftjets5_new_jer1_up: int64 not null
+htsoft5_new_jer1_up: float not null
+nsoftjets2_jer1_up: int64 not null
+htsoft2_jer1_up: float not null
+nsoftjets5_jer1_up: int64 not null
+htsoft5_jer1_up: float not null
+nBtagLoose_jer1_up: int64 not null
+nBtagMedium_jer1_up: int64 not null
+jet1_pt_jer1_down: double
+jet1_eta_jer1_down: double
+jet1_rapidity_jer1_down: double
+jet1_phi_jer1_down: double
+jet1_qgl_jer1_down: float
+jet1_btagPNetQvG_jer1_down: float
+jet1_btagDeepFlavQG_jer1_down: float
+jet1_jetId_jer1_down: uint8
+jet1_puId_jer1_down: uint8
+jet1_mass_jer1_down: double
+jet1_area_jer1_down: float
+jet2_pt_jer1_down: double
+jet2_eta_jer1_down: double
+jet2_rapidity_jer1_down: double
+jet2_phi_jer1_down: double
+jet2_qgl_jer1_down: float
+jet2_btagPNetQvG_jer1_down: float
+jet2_btagDeepFlavQG_jer1_down: float
+jet2_jetId_jer1_down: uint8
+jet2_puId_jer1_down: uint8
+jet2_mass_jer1_down: double
+jet2_area_jer1_down: float
+jet3_pt_jer1_down: double
+jet3_eta_jer1_down: double
+jet3_rapidity_jer1_down: double
+jet3_phi_jer1_down: double
+jet3_qgl_jer1_down: float
+jet3_btagPNetQvG_jer1_down: float
+jet3_btagDeepFlavQG_jer1_down: float
+jet3_jetId_jer1_down: uint8
+jet3_puId_jer1_down: uint8
+jet3_mass_jer1_down: double
+jet3_area_jer1_down: float
+jet4_pt_jer1_down: double
+jet4_eta_jer1_down: double
+jet4_rapidity_jer1_down: double
+jet4_phi_jer1_down: double
+jet4_qgl_jer1_down: float
+jet4_btagPNetQvG_jer1_down: float
+jet4_btagDeepFlavQG_jer1_down: float
+jet4_jetId_jer1_down: uint8
+jet4_puId_jer1_down: uint8
+jet4_mass_jer1_down: double
+jet4_area_jer1_down: float
+jj_mass_jer1_down: double
+jj_mass_log_jer1_down: double
+jj_pt_jer1_down: double
+jj_eta_jer1_down: double
+jj_phi_jer1_down: double
+jj_dEta_jer1_down: double
+jj_dPhi_jer1_down: double
+mmj1_dEta_jer1_down: double
+mmj1_dPhi_jer1_down: double
+mmj1_dR_jer1_down: double
+mmj2_dEta_jer1_down: double
+mmj2_dPhi_jer1_down: double
+mmj2_dR_jer1_down: double
+mmj_min_dEta_jer1_down: double
+mmj_min_dPhi_jer1_down: double
+mmjj_pt_jer1_down: double
+mmjj_eta_jer1_down: double
+mmjj_phi_jer1_down: double
+mmjj_mass_jer1_down: double
+rpt_jer1_down: double
+pt_centrality_jer1_down: double
+zeppenfeld_jer1_down: double
+ll_zstar_log_jer1_down: double
+njets_jer1_down: int64 not null
+nsoftjets2_new_jer1_down: int64 not null
+htsoft2_new_jer1_down: float not null
+nsoftjets5_new_jer1_down: int64 not null
+htsoft5_new_jer1_down: float not null
+nsoftjets2_jer1_down: int64 not null
+htsoft2_jer1_down: float not null
+nsoftjets5_jer1_down: int64 not null
+htsoft5_jer1_down: float not null
+nBtagLoose_jer1_down: int64 not null
+nBtagMedium_jer1_down: int64 not null
+jet1_pt_jer2_up: double
+jet1_eta_jer2_up: double
+jet1_rapidity_jer2_up: double
+jet1_phi_jer2_up: double
+jet1_qgl_jer2_up: float
+jet1_btagPNetQvG_jer2_up: float
+jet1_btagDeepFlavQG_jer2_up: float
+jet1_jetId_jer2_up: uint8
+jet1_puId_jer2_up: uint8
+jet1_mass_jer2_up: double
+jet1_area_jer2_up: float
+jet2_pt_jer2_up: double
+jet2_eta_jer2_up: double
+jet2_rapidity_jer2_up: double
+jet2_phi_jer2_up: double
+jet2_qgl_jer2_up: float
+jet2_btagPNetQvG_jer2_up: float
+jet2_btagDeepFlavQG_jer2_up: float
+jet2_jetId_jer2_up: uint8
+jet2_puId_jer2_up: uint8
+jet2_mass_jer2_up: double
+jet2_area_jer2_up: float
+jet3_pt_jer2_up: double
+jet3_eta_jer2_up: double
+jet3_rapidity_jer2_up: double
+jet3_phi_jer2_up: double
+jet3_qgl_jer2_up: float
+jet3_btagPNetQvG_jer2_up: float
+jet3_btagDeepFlavQG_jer2_up: float
+jet3_jetId_jer2_up: uint8
+jet3_puId_jer2_up: uint8
+jet3_mass_jer2_up: double
+jet3_area_jer2_up: float
+jet4_pt_jer2_up: double
+jet4_eta_jer2_up: double
+jet4_rapidity_jer2_up: double
+jet4_phi_jer2_up: double
+jet4_qgl_jer2_up: float
+jet4_btagPNetQvG_jer2_up: float
+jet4_btagDeepFlavQG_jer2_up: float
+jet4_jetId_jer2_up: uint8
+jet4_puId_jer2_up: uint8
+jet4_mass_jer2_up: double
+jet4_area_jer2_up: float
+jj_mass_jer2_up: double
+jj_mass_log_jer2_up: double
+jj_pt_jer2_up: double
+jj_eta_jer2_up: double
+jj_phi_jer2_up: double
+jj_dEta_jer2_up: double
+jj_dPhi_jer2_up: double
+mmj1_dEta_jer2_up: double
+mmj1_dPhi_jer2_up: double
+mmj1_dR_jer2_up: double
+mmj2_dEta_jer2_up: double
+mmj2_dPhi_jer2_up: double
+mmj2_dR_jer2_up: double
+mmj_min_dEta_jer2_up: double
+mmj_min_dPhi_jer2_up: double
+mmjj_pt_jer2_up: double
+mmjj_eta_jer2_up: double
+mmjj_phi_jer2_up: double
+mmjj_mass_jer2_up: double
+rpt_jer2_up: double
+pt_centrality_jer2_up: double
+zeppenfeld_jer2_up: double
+ll_zstar_log_jer2_up: double
+njets_jer2_up: int64 not null
+nsoftjets2_new_jer2_up: int64 not null
+htsoft2_new_jer2_up: float not null
+nsoftjets5_new_jer2_up: int64 not null
+htsoft5_new_jer2_up: float not null
+nsoftjets2_jer2_up: int64 not null
+htsoft2_jer2_up: float not null
+nsoftjets5_jer2_up: int64 not null
+htsoft5_jer2_up: float not null
+nBtagLoose_jer2_up: int64 not null
+nBtagMedium_jer2_up: int64 not null
+jet1_pt_jer2_down: double
+jet1_eta_jer2_down: double
+jet1_rapidity_jer2_down: double
+jet1_phi_jer2_down: double
+jet1_qgl_jer2_down: float
+jet1_btagPNetQvG_jer2_down: float
+jet1_btagDeepFlavQG_jer2_down: float
+jet1_jetId_jer2_down: uint8
+jet1_puId_jer2_down: uint8
+jet1_mass_jer2_down: double
+jet1_area_jer2_down: float
+jet2_pt_jer2_down: double
+jet2_eta_jer2_down: double
+jet2_rapidity_jer2_down: double
+jet2_phi_jer2_down: double
+jet2_qgl_jer2_down: float
+jet2_btagPNetQvG_jer2_down: float
+jet2_btagDeepFlavQG_jer2_down: float
+jet2_jetId_jer2_down: uint8
+jet2_puId_jer2_down: uint8
+jet2_mass_jer2_down: double
+jet2_area_jer2_down: float
+jet3_pt_jer2_down: double
+jet3_eta_jer2_down: double
+jet3_rapidity_jer2_down: double
+jet3_phi_jer2_down: double
+jet3_qgl_jer2_down: float
+jet3_btagPNetQvG_jer2_down: float
+jet3_btagDeepFlavQG_jer2_down: float
+jet3_jetId_jer2_down: uint8
+jet3_puId_jer2_down: uint8
+jet3_mass_jer2_down: double
+jet3_area_jer2_down: float
+jet4_pt_jer2_down: double
+jet4_eta_jer2_down: double
+jet4_rapidity_jer2_down: double
+jet4_phi_jer2_down: double
+jet4_qgl_jer2_down: float
+jet4_btagPNetQvG_jer2_down: float
+jet4_btagDeepFlavQG_jer2_down: float
+jet4_jetId_jer2_down: uint8
+jet4_puId_jer2_down: uint8
+jet4_mass_jer2_down: double
+jet4_area_jer2_down: float
+jj_mass_jer2_down: double
+jj_mass_log_jer2_down: double
+jj_pt_jer2_down: double
+jj_eta_jer2_down: double
+jj_phi_jer2_down: double
+jj_dEta_jer2_down: double
+jj_dPhi_jer2_down: double
+mmj1_dEta_jer2_down: double
+mmj1_dPhi_jer2_down: double
+mmj1_dR_jer2_down: double
+mmj2_dEta_jer2_down: double
+mmj2_dPhi_jer2_down: double
+mmj2_dR_jer2_down: double
+mmj_min_dEta_jer2_down: double
+mmj_min_dPhi_jer2_down: double
+mmjj_pt_jer2_down: double
+mmjj_eta_jer2_down: double
+mmjj_phi_jer2_down: double
+mmjj_mass_jer2_down: double
+rpt_jer2_down: double
+pt_centrality_jer2_down: double
+zeppenfeld_jer2_down: double
+ll_zstar_log_jer2_down: double
+njets_jer2_down: int64 not null
+nsoftjets2_new_jer2_down: int64 not null
+htsoft2_new_jer2_down: float not null
+nsoftjets5_new_jer2_down: int64 not null
+htsoft5_new_jer2_down: float not null
+nsoftjets2_jer2_down: int64 not null
+htsoft2_jer2_down: float not null
+nsoftjets5_jer2_down: int64 not null
+htsoft5_jer2_down: float not null
+nBtagLoose_jer2_down: int64 not null
+nBtagMedium_jer2_down: int64 not null
+jet1_pt_jer3_up: double
+jet1_eta_jer3_up: double
+jet1_rapidity_jer3_up: double
+jet1_phi_jer3_up: double
+jet1_qgl_jer3_up: float
+jet1_btagPNetQvG_jer3_up: float
+jet1_btagDeepFlavQG_jer3_up: float
+jet1_jetId_jer3_up: uint8
+jet1_puId_jer3_up: uint8
+jet1_mass_jer3_up: double
+jet1_area_jer3_up: float
+jet2_pt_jer3_up: double
+jet2_eta_jer3_up: double
+jet2_rapidity_jer3_up: double
+jet2_phi_jer3_up: double
+jet2_qgl_jer3_up: float
+jet2_btagPNetQvG_jer3_up: float
+jet2_btagDeepFlavQG_jer3_up: float
+jet2_jetId_jer3_up: uint8
+jet2_puId_jer3_up: uint8
+jet2_mass_jer3_up: double
+jet2_area_jer3_up: float
+jet3_pt_jer3_up: double
+jet3_eta_jer3_up: double
+jet3_rapidity_jer3_up: double
+jet3_phi_jer3_up: double
+jet3_qgl_jer3_up: float
+jet3_btagPNetQvG_jer3_up: float
+jet3_btagDeepFlavQG_jer3_up: float
+jet3_jetId_jer3_up: uint8
+jet3_puId_jer3_up: uint8
+jet3_mass_jer3_up: double
+jet3_area_jer3_up: float
+jet4_pt_jer3_up: double
+jet4_eta_jer3_up: double
+jet4_rapidity_jer3_up: double
+jet4_phi_jer3_up: double
+jet4_qgl_jer3_up: float
+jet4_btagPNetQvG_jer3_up: float
+jet4_btagDeepFlavQG_jer3_up: float
+jet4_jetId_jer3_up: uint8
+jet4_puId_jer3_up: uint8
+jet4_mass_jer3_up: double
+jet4_area_jer3_up: float
+jj_mass_jer3_up: double
+jj_mass_log_jer3_up: double
+jj_pt_jer3_up: double
+jj_eta_jer3_up: double
+jj_phi_jer3_up: double
+jj_dEta_jer3_up: double
+jj_dPhi_jer3_up: double
+mmj1_dEta_jer3_up: double
+mmj1_dPhi_jer3_up: double
+mmj1_dR_jer3_up: double
+mmj2_dEta_jer3_up: double
+mmj2_dPhi_jer3_up: double
+mmj2_dR_jer3_up: double
+mmj_min_dEta_jer3_up: double
+mmj_min_dPhi_jer3_up: double
+mmjj_pt_jer3_up: double
+mmjj_eta_jer3_up: double
+mmjj_phi_jer3_up: double
+mmjj_mass_jer3_up: double
+rpt_jer3_up: double
+pt_centrality_jer3_up: double
+zeppenfeld_jer3_up: double
+ll_zstar_log_jer3_up: double
+njets_jer3_up: int64 not null
+nsoftjets2_new_jer3_up: int64 not null
+htsoft2_new_jer3_up: float not null
+nsoftjets5_new_jer3_up: int64 not null
+htsoft5_new_jer3_up: float not null
+nsoftjets2_jer3_up: int64 not null
+htsoft2_jer3_up: float not null
+nsoftjets5_jer3_up: int64 not null
+htsoft5_jer3_up: float not null
+nBtagLoose_jer3_up: int64 not null
+nBtagMedium_jer3_up: int64 not null
+jet1_pt_jer3_down: double
+jet1_eta_jer3_down: double
+jet1_rapidity_jer3_down: double
+jet1_phi_jer3_down: double
+jet1_qgl_jer3_down: float
+jet1_btagPNetQvG_jer3_down: float
+jet1_btagDeepFlavQG_jer3_down: float
+jet1_jetId_jer3_down: uint8
+jet1_puId_jer3_down: uint8
+jet1_mass_jer3_down: double
+jet1_area_jer3_down: float
+jet2_pt_jer3_down: double
+jet2_eta_jer3_down: double
+jet2_rapidity_jer3_down: double
+jet2_phi_jer3_down: double
+jet2_qgl_jer3_down: float
+jet2_btagPNetQvG_jer3_down: float
+jet2_btagDeepFlavQG_jer3_down: float
+jet2_jetId_jer3_down: uint8
+jet2_puId_jer3_down: uint8
+jet2_mass_jer3_down: double
+jet2_area_jer3_down: float
+jet3_pt_jer3_down: double
+jet3_eta_jer3_down: double
+jet3_rapidity_jer3_down: double
+jet3_phi_jer3_down: double
+jet3_qgl_jer3_down: float
+jet3_btagPNetQvG_jer3_down: float
+jet3_btagDeepFlavQG_jer3_down: float
+jet3_jetId_jer3_down: uint8
+jet3_puId_jer3_down: uint8
+jet3_mass_jer3_down: double
+jet3_area_jer3_down: float
+jet4_pt_jer3_down: double
+jet4_eta_jer3_down: double
+jet4_rapidity_jer3_down: double
+jet4_phi_jer3_down: double
+jet4_qgl_jer3_down: float
+jet4_btagPNetQvG_jer3_down: float
+jet4_btagDeepFlavQG_jer3_down: float
+jet4_jetId_jer3_down: uint8
+jet4_puId_jer3_down: uint8
+jet4_mass_jer3_down: double
+jet4_area_jer3_down: float
+jj_mass_jer3_down: double
+jj_mass_log_jer3_down: double
+jj_pt_jer3_down: double
+jj_eta_jer3_down: double
+jj_phi_jer3_down: double
+jj_dEta_jer3_down: double
+jj_dPhi_jer3_down: double
+mmj1_dEta_jer3_down: double
+mmj1_dPhi_jer3_down: double
+mmj1_dR_jer3_down: double
+mmj2_dEta_jer3_down: double
+mmj2_dPhi_jer3_down: double
+mmj2_dR_jer3_down: double
+mmj_min_dEta_jer3_down: double
+mmj_min_dPhi_jer3_down: double
+mmjj_pt_jer3_down: double
+mmjj_eta_jer3_down: double
+mmjj_phi_jer3_down: double
+mmjj_mass_jer3_down: double
+rpt_jer3_down: double
+pt_centrality_jer3_down: double
+zeppenfeld_jer3_down: double
+ll_zstar_log_jer3_down: double
+njets_jer3_down: int64 not null
+nsoftjets2_new_jer3_down: int64 not null
+htsoft2_new_jer3_down: float not null
+nsoftjets5_new_jer3_down: int64 not null
+htsoft5_new_jer3_down: float not null
+nsoftjets2_jer3_down: int64 not null
+htsoft2_jer3_down: float not null
+nsoftjets5_jer3_down: int64 not null
+htsoft5_jer3_down: float not null
+nBtagLoose_jer3_down: int64 not null
+nBtagMedium_jer3_down: int64 not null
+jet1_pt_jer4_up: double
+jet1_eta_jer4_up: double
+jet1_rapidity_jer4_up: double
+jet1_phi_jer4_up: double
+jet1_qgl_jer4_up: float
+jet1_btagPNetQvG_jer4_up: float
+jet1_btagDeepFlavQG_jer4_up: float
+jet1_jetId_jer4_up: uint8
+jet1_puId_jer4_up: uint8
+jet1_mass_jer4_up: double
+jet1_area_jer4_up: float
+jet2_pt_jer4_up: double
+jet2_eta_jer4_up: double
+jet2_rapidity_jer4_up: double
+jet2_phi_jer4_up: double
+jet2_qgl_jer4_up: float
+jet2_btagPNetQvG_jer4_up: float
+jet2_btagDeepFlavQG_jer4_up: float
+jet2_jetId_jer4_up: uint8
+jet2_puId_jer4_up: uint8
+jet2_mass_jer4_up: double
+jet2_area_jer4_up: float
+jet3_pt_jer4_up: double
+jet3_eta_jer4_up: double
+jet3_rapidity_jer4_up: double
+jet3_phi_jer4_up: double
+jet3_qgl_jer4_up: float
+jet3_btagPNetQvG_jer4_up: float
+jet3_btagDeepFlavQG_jer4_up: float
+jet3_jetId_jer4_up: uint8
+jet3_puId_jer4_up: uint8
+jet3_mass_jer4_up: double
+jet3_area_jer4_up: float
+jet4_pt_jer4_up: double
+jet4_eta_jer4_up: double
+jet4_rapidity_jer4_up: double
+jet4_phi_jer4_up: double
+jet4_qgl_jer4_up: float
+jet4_btagPNetQvG_jer4_up: float
+jet4_btagDeepFlavQG_jer4_up: float
+jet4_jetId_jer4_up: uint8
+jet4_puId_jer4_up: uint8
+jet4_mass_jer4_up: double
+jet4_area_jer4_up: float
+jj_mass_jer4_up: double
+jj_mass_log_jer4_up: double
+jj_pt_jer4_up: double
+jj_eta_jer4_up: double
+jj_phi_jer4_up: double
+jj_dEta_jer4_up: double
+jj_dPhi_jer4_up: double
+mmj1_dEta_jer4_up: double
+mmj1_dPhi_jer4_up: double
+mmj1_dR_jer4_up: double
+mmj2_dEta_jer4_up: double
+mmj2_dPhi_jer4_up: double
+mmj2_dR_jer4_up: double
+mmj_min_dEta_jer4_up: double
+mmj_min_dPhi_jer4_up: double
+mmjj_pt_jer4_up: double
+mmjj_eta_jer4_up: double
+mmjj_phi_jer4_up: double
+mmjj_mass_jer4_up: double
+rpt_jer4_up: double
+pt_centrality_jer4_up: double
+zeppenfeld_jer4_up: double
+ll_zstar_log_jer4_up: double
+njets_jer4_up: int64 not null
+nsoftjets2_new_jer4_up: int64 not null
+htsoft2_new_jer4_up: float not null
+nsoftjets5_new_jer4_up: int64 not null
+htsoft5_new_jer4_up: float not null
+nsoftjets2_jer4_up: int64 not null
+htsoft2_jer4_up: float not null
+nsoftjets5_jer4_up: int64 not null
+htsoft5_jer4_up: float not null
+nBtagLoose_jer4_up: int64 not null
+nBtagMedium_jer4_up: int64 not null
+jet1_pt_jer4_down: double
+jet1_eta_jer4_down: double
+jet1_rapidity_jer4_down: double
+jet1_phi_jer4_down: double
+jet1_qgl_jer4_down: float
+jet1_btagPNetQvG_jer4_down: float
+jet1_btagDeepFlavQG_jer4_down: float
+jet1_jetId_jer4_down: uint8
+jet1_puId_jer4_down: uint8
+jet1_mass_jer4_down: double
+jet1_area_jer4_down: float
+jet2_pt_jer4_down: double
+jet2_eta_jer4_down: double
+jet2_rapidity_jer4_down: double
+jet2_phi_jer4_down: double
+jet2_qgl_jer4_down: float
+jet2_btagPNetQvG_jer4_down: float
+jet2_btagDeepFlavQG_jer4_down: float
+jet2_jetId_jer4_down: uint8
+jet2_puId_jer4_down: uint8
+jet2_mass_jer4_down: double
+jet2_area_jer4_down: float
+jet3_pt_jer4_down: double
+jet3_eta_jer4_down: double
+jet3_rapidity_jer4_down: double
+jet3_phi_jer4_down: double
+jet3_qgl_jer4_down: float
+jet3_btagPNetQvG_jer4_down: float
+jet3_btagDeepFlavQG_jer4_down: float
+jet3_jetId_jer4_down: uint8
+jet3_puId_jer4_down: uint8
+jet3_mass_jer4_down: double
+jet3_area_jer4_down: float
+jet4_pt_jer4_down: double
+jet4_eta_jer4_down: double
+jet4_rapidity_jer4_down: double
+jet4_phi_jer4_down: double
+jet4_qgl_jer4_down: float
+jet4_btagPNetQvG_jer4_down: float
+jet4_btagDeepFlavQG_jer4_down: float
+jet4_jetId_jer4_down: uint8
+jet4_puId_jer4_down: uint8
+jet4_mass_jer4_down: double
+jet4_area_jer4_down: float
+jj_mass_jer4_down: double
+jj_mass_log_jer4_down: double
+jj_pt_jer4_down: double
+jj_eta_jer4_down: double
+jj_phi_jer4_down: double
+jj_dEta_jer4_down: double
+jj_dPhi_jer4_down: double
+mmj1_dEta_jer4_down: double
+mmj1_dPhi_jer4_down: double
+mmj1_dR_jer4_down: double
+mmj2_dEta_jer4_down: double
+mmj2_dPhi_jer4_down: double
+mmj2_dR_jer4_down: double
+mmj_min_dEta_jer4_down: double
+mmj_min_dPhi_jer4_down: double
+mmjj_pt_jer4_down: double
+mmjj_eta_jer4_down: double
+mmjj_phi_jer4_down: double
+mmjj_mass_jer4_down: double
+rpt_jer4_down: double
+pt_centrality_jer4_down: double
+zeppenfeld_jer4_down: double
+ll_zstar_log_jer4_down: double
+njets_jer4_down: int64 not null
+nsoftjets2_new_jer4_down: int64 not null
+htsoft2_new_jer4_down: float not null
+nsoftjets5_new_jer4_down: int64 not null
+htsoft5_new_jer4_down: float not null
+nsoftjets2_jer4_down: int64 not null
+htsoft2_jer4_down: float not null
+nsoftjets5_jer4_down: int64 not null
+htsoft5_jer4_down: float not null
+nBtagLoose_jer4_down: int64 not null
+nBtagMedium_jer4_down: int64 not null
+jet1_pt_jer5_up: double
+jet1_eta_jer5_up: double
+jet1_rapidity_jer5_up: double
+jet1_phi_jer5_up: double
+jet1_qgl_jer5_up: float
+jet1_btagPNetQvG_jer5_up: float
+jet1_btagDeepFlavQG_jer5_up: float
+jet1_jetId_jer5_up: uint8
+jet1_puId_jer5_up: uint8
+jet1_mass_jer5_up: double
+jet1_area_jer5_up: float
+jet2_pt_jer5_up: double
+jet2_eta_jer5_up: double
+jet2_rapidity_jer5_up: double
+jet2_phi_jer5_up: double
+jet2_qgl_jer5_up: float
+jet2_btagPNetQvG_jer5_up: float
+jet2_btagDeepFlavQG_jer5_up: float
+jet2_jetId_jer5_up: uint8
+jet2_puId_jer5_up: uint8
+jet2_mass_jer5_up: double
+jet2_area_jer5_up: float
+jet3_pt_jer5_up: double
+jet3_eta_jer5_up: double
+jet3_rapidity_jer5_up: double
+jet3_phi_jer5_up: double
+jet3_qgl_jer5_up: float
+jet3_btagPNetQvG_jer5_up: float
+jet3_btagDeepFlavQG_jer5_up: float
+jet3_jetId_jer5_up: uint8
+jet3_puId_jer5_up: uint8
+jet3_mass_jer5_up: double
+jet3_area_jer5_up: float
+jet4_pt_jer5_up: double
+jet4_eta_jer5_up: double
+jet4_rapidity_jer5_up: double
+jet4_phi_jer5_up: double
+jet4_qgl_jer5_up: float
+jet4_btagPNetQvG_jer5_up: float
+jet4_btagDeepFlavQG_jer5_up: float
+jet4_jetId_jer5_up: uint8
+jet4_puId_jer5_up: uint8
+jet4_mass_jer5_up: double
+jet4_area_jer5_up: float
+jj_mass_jer5_up: double
+jj_mass_log_jer5_up: double
+jj_pt_jer5_up: double
+jj_eta_jer5_up: double
+jj_phi_jer5_up: double
+jj_dEta_jer5_up: double
+jj_dPhi_jer5_up: double
+mmj1_dEta_jer5_up: double
+mmj1_dPhi_jer5_up: double
+mmj1_dR_jer5_up: double
+mmj2_dEta_jer5_up: double
+mmj2_dPhi_jer5_up: double
+mmj2_dR_jer5_up: double
+mmj_min_dEta_jer5_up: double
+mmj_min_dPhi_jer5_up: double
+mmjj_pt_jer5_up: double
+mmjj_eta_jer5_up: double
+mmjj_phi_jer5_up: double
+mmjj_mass_jer5_up: double
+rpt_jer5_up: double
+pt_centrality_jer5_up: double
+zeppenfeld_jer5_up: double
+ll_zstar_log_jer5_up: double
+njets_jer5_up: int64 not null
+nsoftjets2_new_jer5_up: int64 not null
+htsoft2_new_jer5_up: float not null
+nsoftjets5_new_jer5_up: int64 not null
+htsoft5_new_jer5_up: float not null
+nsoftjets2_jer5_up: int64 not null
+htsoft2_jer5_up: float not null
+nsoftjets5_jer5_up: int64 not null
+htsoft5_jer5_up: float not null
+nBtagLoose_jer5_up: int64 not null
+nBtagMedium_jer5_up: int64 not null
+jet1_pt_jer5_down: double
+jet1_eta_jer5_down: double
+jet1_rapidity_jer5_down: double
+jet1_phi_jer5_down: double
+jet1_qgl_jer5_down: float
+jet1_btagPNetQvG_jer5_down: float
+jet1_btagDeepFlavQG_jer5_down: float
+jet1_jetId_jer5_down: uint8
+jet1_puId_jer5_down: uint8
+jet1_mass_jer5_down: double
+jet1_area_jer5_down: float
+jet2_pt_jer5_down: double
+jet2_eta_jer5_down: double
+jet2_rapidity_jer5_down: double
+jet2_phi_jer5_down: double
+jet2_qgl_jer5_down: float
+jet2_btagPNetQvG_jer5_down: float
+jet2_btagDeepFlavQG_jer5_down: float
+jet2_jetId_jer5_down: uint8
+jet2_puId_jer5_down: uint8
+jet2_mass_jer5_down: double
+jet2_area_jer5_down: float
+jet3_pt_jer5_down: double
+jet3_eta_jer5_down: double
+jet3_rapidity_jer5_down: double
+jet3_phi_jer5_down: double
+jet3_qgl_jer5_down: float
+jet3_btagPNetQvG_jer5_down: float
+jet3_btagDeepFlavQG_jer5_down: float
+jet3_jetId_jer5_down: uint8
+jet3_puId_jer5_down: uint8
+jet3_mass_jer5_down: double
+jet3_area_jer5_down: float
+jet4_pt_jer5_down: double
+jet4_eta_jer5_down: double
+jet4_rapidity_jer5_down: double
+jet4_phi_jer5_down: double
+jet4_qgl_jer5_down: float
+jet4_btagPNetQvG_jer5_down: float
+jet4_btagDeepFlavQG_jer5_down: float
+jet4_jetId_jer5_down: uint8
+jet4_puId_jer5_down: uint8
+jet4_mass_jer5_down: double
+jet4_area_jer5_down: float
+jj_mass_jer5_down: double
+jj_mass_log_jer5_down: double
+jj_pt_jer5_down: double
+jj_eta_jer5_down: double
+jj_phi_jer5_down: double
+jj_dEta_jer5_down: double
+jj_dPhi_jer5_down: double
+mmj1_dEta_jer5_down: double
+mmj1_dPhi_jer5_down: double
+mmj1_dR_jer5_down: double
+mmj2_dEta_jer5_down: double
+mmj2_dPhi_jer5_down: double
+mmj2_dR_jer5_down: double
+mmj_min_dEta_jer5_down: double
+mmj_min_dPhi_jer5_down: double
+mmjj_pt_jer5_down: double
+mmjj_eta_jer5_down: double
+mmjj_phi_jer5_down: double
+mmjj_mass_jer5_down: double
+rpt_jer5_down: double
+pt_centrality_jer5_down: double
+zeppenfeld_jer5_down: double
+ll_zstar_log_jer5_down: double
+njets_jer5_down: int64 not null
+nsoftjets2_new_jer5_down: int64 not null
+htsoft2_new_jer5_down: float not null
+nsoftjets5_new_jer5_down: int64 not null
+htsoft5_new_jer5_down: float not null
+nsoftjets2_jer5_down: int64 not null
+htsoft2_jer5_down: float not null
+nsoftjets5_jer5_down: int64 not null
+htsoft5_jer5_down: float not null
+nBtagLoose_jer5_down: int64 not null
+nBtagMedium_jer5_down: int64 not null
+jet1_pt_jer6_up: double
+jet1_eta_jer6_up: double
+jet1_rapidity_jer6_up: double
+jet1_phi_jer6_up: double
+jet1_qgl_jer6_up: float
+jet1_btagPNetQvG_jer6_up: float
+jet1_btagDeepFlavQG_jer6_up: float
+jet1_jetId_jer6_up: uint8
+jet1_puId_jer6_up: uint8
+jet1_mass_jer6_up: double
+jet1_area_jer6_up: float
+jet2_pt_jer6_up: double
+jet2_eta_jer6_up: double
+jet2_rapidity_jer6_up: double
+jet2_phi_jer6_up: double
+jet2_qgl_jer6_up: float
+jet2_btagPNetQvG_jer6_up: float
+jet2_btagDeepFlavQG_jer6_up: float
+jet2_jetId_jer6_up: uint8
+jet2_puId_jer6_up: uint8
+jet2_mass_jer6_up: double
+jet2_area_jer6_up: float
+jet3_pt_jer6_up: double
+jet3_eta_jer6_up: double
+jet3_rapidity_jer6_up: double
+jet3_phi_jer6_up: double
+jet3_qgl_jer6_up: float
+jet3_btagPNetQvG_jer6_up: float
+jet3_btagDeepFlavQG_jer6_up: float
+jet3_jetId_jer6_up: uint8
+jet3_puId_jer6_up: uint8
+jet3_mass_jer6_up: double
+jet3_area_jer6_up: float
+jet4_pt_jer6_up: double
+jet4_eta_jer6_up: double
+jet4_rapidity_jer6_up: double
+jet4_phi_jer6_up: double
+jet4_qgl_jer6_up: float
+jet4_btagPNetQvG_jer6_up: float
+jet4_btagDeepFlavQG_jer6_up: float
+jet4_jetId_jer6_up: uint8
+jet4_puId_jer6_up: uint8
+jet4_mass_jer6_up: double
+jet4_area_jer6_up: float
+jj_mass_jer6_up: double
+jj_mass_log_jer6_up: double
+jj_pt_jer6_up: double
+jj_eta_jer6_up: double
+jj_phi_jer6_up: double
+jj_dEta_jer6_up: double
+jj_dPhi_jer6_up: double
+mmj1_dEta_jer6_up: double
+mmj1_dPhi_jer6_up: double
+mmj1_dR_jer6_up: double
+mmj2_dEta_jer6_up: double
+mmj2_dPhi_jer6_up: double
+mmj2_dR_jer6_up: double
+mmj_min_dEta_jer6_up: double
+mmj_min_dPhi_jer6_up: double
+mmjj_pt_jer6_up: double
+mmjj_eta_jer6_up: double
+mmjj_phi_jer6_up: double
+mmjj_mass_jer6_up: double
+rpt_jer6_up: double
+pt_centrality_jer6_up: double
+zeppenfeld_jer6_up: double
+ll_zstar_log_jer6_up: double
+njets_jer6_up: int64 not null
+nsoftjets2_new_jer6_up: int64 not null
+htsoft2_new_jer6_up: float not null
+nsoftjets5_new_jer6_up: int64 not null
+htsoft5_new_jer6_up: float not null
+nsoftjets2_jer6_up: int64 not null
+htsoft2_jer6_up: float not null
+nsoftjets5_jer6_up: int64 not null
+htsoft5_jer6_up: float not null
+nBtagLoose_jer6_up: int64 not null
+nBtagMedium_jer6_up: int64 not null
+jet1_pt_jer6_down: double
+jet1_eta_jer6_down: double
+jet1_rapidity_jer6_down: double
+jet1_phi_jer6_down: double
+jet1_qgl_jer6_down: float
+jet1_btagPNetQvG_jer6_down: float
+jet1_btagDeepFlavQG_jer6_down: float
+jet1_jetId_jer6_down: uint8
+jet1_puId_jer6_down: uint8
+jet1_mass_jer6_down: double
+jet1_area_jer6_down: float
+jet2_pt_jer6_down: double
+jet2_eta_jer6_down: double
+jet2_rapidity_jer6_down: double
+jet2_phi_jer6_down: double
+jet2_qgl_jer6_down: float
+jet2_btagPNetQvG_jer6_down: float
+jet2_btagDeepFlavQG_jer6_down: float
+jet2_jetId_jer6_down: uint8
+jet2_puId_jer6_down: uint8
+jet2_mass_jer6_down: double
+jet2_area_jer6_down: float
+jet3_pt_jer6_down: double
+jet3_eta_jer6_down: double
+jet3_rapidity_jer6_down: double
+jet3_phi_jer6_down: double
+jet3_qgl_jer6_down: float
+jet3_btagPNetQvG_jer6_down: float
+jet3_btagDeepFlavQG_jer6_down: float
+jet3_jetId_jer6_down: uint8
+jet3_puId_jer6_down: uint8
+jet3_mass_jer6_down: double
+jet3_area_jer6_down: float
+jet4_pt_jer6_down: double
+jet4_eta_jer6_down: double
+jet4_rapidity_jer6_down: double
+jet4_phi_jer6_down: double
+jet4_qgl_jer6_down: float
+jet4_btagPNetQvG_jer6_down: float
+jet4_btagDeepFlavQG_jer6_down: float
+jet4_jetId_jer6_down: uint8
+jet4_puId_jer6_down: uint8
+jet4_mass_jer6_down: double
+jet4_area_jer6_down: float
+jj_mass_jer6_down: double
+jj_mass_log_jer6_down: double
+jj_pt_jer6_down: double
+jj_eta_jer6_down: double
+jj_phi_jer6_down: double
+jj_dEta_jer6_down: double
+jj_dPhi_jer6_down: double
+mmj1_dEta_jer6_down: double
+mmj1_dPhi_jer6_down: double
+mmj1_dR_jer6_down: double
+mmj2_dEta_jer6_down: double
+mmj2_dPhi_jer6_down: double
+mmj2_dR_jer6_down: double
+mmj_min_dEta_jer6_down: double
+mmj_min_dPhi_jer6_down: double
+mmjj_pt_jer6_down: double
+mmjj_eta_jer6_down: double
+mmjj_phi_jer6_down: double
+mmjj_mass_jer6_down: double
+rpt_jer6_down: double
+pt_centrality_jer6_down: double
+zeppenfeld_jer6_down: double
+ll_zstar_log_jer6_down: double
+njets_jer6_down: int64 not null
+nsoftjets2_new_jer6_down: int64 not null
+htsoft2_new_jer6_down: float not null
+nsoftjets5_new_jer6_down: int64 not null
+htsoft5_new_jer6_down: float not null
+nsoftjets2_jer6_down: int64 not null
+htsoft2_jer6_down: float not null
+nsoftjets5_jer6_down: int64 not null
+htsoft5_jer6_down: float not null
+nBtagLoose_jer6_down: int64 not null
+nBtagMedium_jer6_down: int64 not null
+z_peak: bool not null
+h_sidebands: bool not null
+h_peak: bool not null
+wgt_nominal: double not null
+wgt_muIso_down: double not null
+wgt_LHERen_down: double not null
+wgt_pdf_2rms_down: double not null
+wgt_pdf_2rms_up: double not null
+wgt_qgl_wgt_up: double not null
+wgt_qgl_wgt_down: double not null
+wgt_pu_wgt_down: double not null
+wgt_LHEFac_down: double not null
+wgt_pu_wgt_up: double not null
+wgt_muTrig_down: double not null
+wgt_LHEFac_up: double not null
+wgt_muIso_up: double not null
+wgt_LHERen_up: double not null
+wgt_muID_down: double not null
+wgt_muID_up: double not null
+wgt_muTrig_up: double not null
+separate_wgt_genWeight: double not null
+separate_wgt_genWeight_normalization: double not null
+separate_wgt_xsec: double not null
+separate_wgt_lumi: double not null
+separate_wgt_pu_wgt: double not null
+separate_wgt_nnlops: double not null
+separate_wgt_muID: double not null
+separate_wgt_muIso: double not null
+separate_wgt_muTrig: double not null
+separate_wgt_LHERen: double not null
+separate_wgt_LHEFac: double not null
+separate_wgt_pdf_2rms: double not null
+separate_wgt_jetpuid_wgt: double not null
+separate_wgt_qgl_wgt: double not null
+__fragment_index: int32
+__batch_index: int32
+__last_in_fragment: bool
+__filename: string

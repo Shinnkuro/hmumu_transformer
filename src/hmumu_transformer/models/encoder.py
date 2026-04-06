@@ -1,38 +1,26 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import List
 
 import torch
 import torch.nn as nn
 
-from .attention import AttentionConfig, MultiheadSelfAttentionWithPairwiseBias
+from .attention import AttentionConfig, PairwiseBias, ParticleAttentionBlock, ClassAttentionBlock
+
 
 @dataclass(frozen=True)
 class EncoderConfig:
     d_model: int
-    n_layers: int
+    n_particle_layers: int
+    n_class_layers: int
     n_heads: int
     dropout: float
     pairwise_dim: int
     pairwise_hidden: int
 
-class FeedForward(nn.Module):
-    def __init__(self, d_model: int, hidden: int, dropout: float):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(d_model, hidden),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden, d_model),
-            nn.Dropout(dropout),
-        )
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return self.net(x)
-
-class EncoderLayer(nn.Module):
-    def __init__(self, cfg: EncoderConfig, token_type_ids: torch.Tensor):
+class ParticleTransformerEncoder(nn.Module):
+    def __init__(self, cfg: EncoderConfig):
         super().__init__()
         att_cfg = AttentionConfig(
             d_model=cfg.d_model,
@@ -41,24 +29,20 @@ class EncoderLayer(nn.Module):
             pairwise_dim=cfg.pairwise_dim,
             pairwise_hidden=cfg.pairwise_hidden,
         )
-        self.ln1 = nn.LayerNorm(cfg.d_model)
-        self.attn = MultiheadSelfAttentionWithPairwiseBias(att_cfg, token_type_ids=token_type_ids)
-        self.ln2 = nn.LayerNorm(cfg.d_model)
-        self.ffn = FeedForward(cfg.d_model, hidden=4 * cfg.d_model, dropout=cfg.dropout)
+        self.pair_bias = PairwiseBias(cfg.pairwise_dim, cfg.pairwise_hidden, cfg.n_heads)
+        self.particle_blocks = nn.ModuleList([ParticleAttentionBlock(att_cfg) for _ in range(cfg.n_particle_layers)])
+        self.class_blocks = nn.ModuleList([ClassAttentionBlock(cfg.d_model, cfg.n_heads, cfg.dropout) for _ in range(cfg.n_class_layers)])
+        self.cls_token = nn.Parameter(torch.zeros(1, 1, cfg.d_model), requires_grad=True)
+        nn.init.trunc_normal_(self.cls_token, std=0.02)
+        self.final_norm = nn.LayerNorm(cfg.d_model)
 
     def forward(self, h: torch.Tensor, v: torch.Tensor, m: torch.Tensor) -> torch.Tensor:
-        # Pre-norm
-        h = h + self.attn(self.ln1(h), v=v, m=m)
-        h = h + self.ffn(self.ln2(h))
-        return h
+        attn_bias = self.pair_bias(v)
+        for block in self.particle_blocks:
+            h = block(h, m=m, attn_bias=attn_bias)
 
-class TransformerEncoder(nn.Module):
-    def __init__(self, cfg: EncoderConfig, token_type_ids: torch.Tensor):
-        super().__init__()
-        self.layers = nn.ModuleList([EncoderLayer(cfg, token_type_ids=token_type_ids) for _ in range(cfg.n_layers)])
-        self.final_ln = nn.LayerNorm(cfg.d_model)
-
-    def forward(self, h: torch.Tensor, v: torch.Tensor, m: torch.Tensor) -> torch.Tensor:
-        for layer in self.layers:
-            h = layer(h, v=v, m=m)
-        return self.final_ln(h)
+        cls = self.cls_token.expand(h.size(0), -1, -1)
+        for block in self.class_blocks:
+            cls = block(h, cls, m=m)
+        cls = self.final_norm(cls)
+        return cls.squeeze(1)
