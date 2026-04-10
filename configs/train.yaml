@@ -4,11 +4,13 @@ train:
   lr: 3.0e-4
   weight_decay: 0.01
   optimizer: adamw
+  seed: 1337
 
-  # Balanced sampling
-  batch_size: null          # null => one large balanced batch per epoch
-  per_class_batch: null     # if batch_size is null, can set per_class_batch; null => use min class count
+  # Mini-batch training. Class imbalance is handled by weighted loss, not by a balanced sampler.
+  batch_size: 768
+  eval_batch_size: 1024
   num_workers: 0
+  eval_num_workers: 0
 
   # Early stopping
   early_stopping:

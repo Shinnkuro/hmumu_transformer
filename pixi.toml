@@ -19,5 +19,6 @@ pip = ">=26.0.1,<27"
 # CUDA is not constrained here.
 
 [tasks]
+preprocess = "python -m scripts.build_token_shards --config configs/experiment.yaml"
 train = "python -m scripts.train --config configs/experiment.yaml"
 evaluate = "python -m scripts.evaluate --run-dir runs/latest"

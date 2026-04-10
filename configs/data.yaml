@@ -67,3 +67,12 @@ data:
 
   # Fit window (already applied in input samples, but enforced as a safety check)
   dimuon_mass_window: [115.0, 135.0]
+
+
+  # Offline preprocessing to token shards for low-memory streaming training
+  shards:
+    root_dir: processed/default
+    rows_per_shard: 50000
+    record_batch_size: 65536
+    rebuild: false
+    seed: 1337
