@@ -27,10 +27,10 @@ def main() -> None:
     files += cfg["data"]["ggH_files"]
     files += cfg["data"]["VBF_files"]
     files += cfg["data"]["DY_files"]
-    check_files_exist(files)
+    resolved_files = check_files_exist(files)
 
     prepared = prepare_token_shards(cfg, force_rebuild=args.force)
-    print(json.dumps({"metadata_path": prepared.metadata_path, "splits": prepared.metadata["splits"]}, indent=2))
+    print(json.dumps({"metadata_path": prepared.metadata_path, "num_input_files": len(resolved_files), "splits": prepared.metadata["splits"]}, indent=2))
 
 
 if __name__ == "__main__":

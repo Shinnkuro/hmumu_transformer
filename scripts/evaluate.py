@@ -68,7 +68,7 @@ def main() -> None:
     files += cfg["data"]["ggH_files"]
     files += cfg["data"]["VBF_files"]
     files += cfg["data"]["DY_files"]
-    check_files_exist(files)
+    resolved_files = check_files_exist(files)
 
     with open(os.path.join(run_dir, "x_scaler.json"), "r", encoding="utf-8") as handle:
         scaler_dict = json.load(handle)

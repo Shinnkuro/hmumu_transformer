@@ -45,13 +45,15 @@ def main() -> None:
     files += cfg["data"]["ggH_files"]
     files += cfg["data"]["VBF_files"]
     files += cfg["data"]["DY_files"]
-    check_files_exist(files)
+    resolved_files = check_files_exist(files)
 
     run_dir = args.run_dir or make_run_dir("runs")
     os.makedirs(run_dir, exist_ok=True)
 
     with open(os.path.join(run_dir, "config_merged.json"), "w", encoding="utf-8") as handle:
         json.dump(cfg, handle, indent=2)
+    with open(os.path.join(run_dir, "input_files_resolved.json"), "w", encoding="utf-8") as handle:
+        json.dump({"files": resolved_files}, handle, indent=2)
     write_env_report(os.path.join(run_dir, "env.json"))
 
     built = build_dataloaders(cfg)

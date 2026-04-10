@@ -4,6 +4,8 @@ from typing import Dict, Iterator, List, Sequence
 
 import numpy as np
 
+from ..utils.paths import expand_path_patterns
+
 
 DEFAULT_RECORD_BATCH_SIZE = 65_536
 
@@ -29,11 +31,16 @@ def iter_parquet_batches(
     This avoids materializing the full dataset with ``dataset.to_table()`` and keeps
     peak host memory bounded by the record-batch size.
     """
-    if not paths:
+    resolved_paths = expand_path_patterns(
+        paths,
+        strict=True,
+        description="parquet inputs",
+    )
+    if not resolved_paths:
         return
 
     ds = _load_pyarrow_dataset_module()
-    dataset = ds.dataset(list(paths), format="parquet")
+    dataset = ds.dataset(resolved_paths, format="parquet")
     scanner = dataset.scanner(columns=list(columns), batch_size=int(batch_size))
     names: List[str] = list(columns)
     for record_batch in scanner.to_batches():

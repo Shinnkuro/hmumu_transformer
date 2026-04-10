@@ -3,6 +3,8 @@ from __future__ import annotations
 import os
 from typing import Dict, List, Tuple
 
+from .utils.paths import expand_path_patterns, is_glob_pattern
+
 _REQUIRED_IMPORTS: List[Tuple[str, str]] = [
     ("torch", "torch"),
     ("numpy", "numpy"),
@@ -37,10 +39,27 @@ def check_dependencies() -> None:
             lines.append(f"  - {d}")
         raise RuntimeError("\n".join(lines))
 
-def check_files_exist(paths: List[str]) -> None:
-    missing: List[str] = [p for p in paths if not os.path.exists(p)]
+def check_files_exist(paths: List[str]) -> List[str]:
+    resolved = expand_path_patterns(
+        paths,
+        strict=False,
+        description="input parquet files",
+    )
+
+    missing: List[str] = []
+    for path in paths:
+        if is_glob_pattern(path):
+            matches = expand_path_patterns([path], strict=False)
+            if not matches:
+                missing.append(f"{path}  (glob matched 0 files)")
+        else:
+            if not os.path.isfile(path):
+                missing.append(path)
+
     if missing:
-        lines = ["Input file check failed. Missing parquet files:"]
+        lines = ["Input file check failed. Missing parquet files or empty glob patterns:"]
         for p in missing:
             lines.append(f"  - {p}")
         raise FileNotFoundError("\n".join(lines))
+
+    return resolved

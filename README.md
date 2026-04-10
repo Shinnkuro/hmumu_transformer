@@ -45,6 +45,23 @@ Configured in `configs/data.yaml`:
 - `data.VBF_files`
 - `data.DY_files`
 
+Each entry may be either:
+
+- a concrete parquet file path, or
+- a `glob` pattern such as `*.parquet` or `**/*.parquet`
+
+Examples:
+
+```yaml
+data:
+  ggH_files:
+    - /data/hmm/ggh_*.parquet
+  DY_files:
+    - /data/hmm/dy/**/*.parquet
+```
+
+`**` patterns are resolved recursively. Input patterns are expanded before preflight checks, parquet scanning, and shard-cache metadata comparison, so adding or removing matching files will correctly trigger a shard rebuild.
+
 The tokenizer expects the columns listed in `data.columns`. The code still enforces the `dimuon_mass_window` during preprocessing even if the input parquet files were already filtered upstream.
 
 ---

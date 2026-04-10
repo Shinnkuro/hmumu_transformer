@@ -1,9 +1,12 @@
 data:
+  # Each entry can be a literal parquet file or a glob pattern (including ** recursive globs).
   ggH_files:
+    # Example: /path/to/ggh_*.parquet
     - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/ggh_powhegPS_merged_hpeak_10k.parquet
   VBF_files:
     - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/dy_VBF_filter_merged_hpeak_10k.parquet
   DY_files:
+    # Example recursive glob: /path/to/dy/**/*.parquet
     - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/dy_M-50_MiNNLO_merged_hpeak_10k.parquet
     - /depot/cms/hu1027/hmm_ntuples/skimmed_for_dnn_AK8jets/merged/2018/filtered_hpeak_10k/dy_M-100To200_MiNNLO_merged_hpeak_10k.parquet
 

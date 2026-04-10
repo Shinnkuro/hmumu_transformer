@@ -16,6 +16,7 @@ from .reader import iter_parquet_batches
 from .scaler import MaskedStandardScaler, MaskedStandardScalerAccumulator
 from .split import SplitSpec
 from .tokenizer import TokenConfig, build_tokens_from_row
+from ..utils.paths import expand_path_patterns
 
 
 LABELS = {"ggH": 0, "VBF": 1, "DY": 2}
@@ -209,9 +210,9 @@ def _metadata_matches(metadata: Mapping[str, Any], cfg: Mapping[str, Any], shard
     data_cfg = cfg["data"]
     split_cfg = data_cfg["split"]
     expected = {
-        "ggH_files": list(data_cfg["ggH_files"]),
-        "VBF_files": list(data_cfg["VBF_files"]),
-        "DY_files": list(data_cfg["DY_files"]),
+        "ggH_files": expand_path_patterns(data_cfg["ggH_files"], strict=True, description="ggH files"),
+        "VBF_files": expand_path_patterns(data_cfg["VBF_files"], strict=True, description="VBF files"),
+        "DY_files": expand_path_patterns(data_cfg["DY_files"], strict=True, description="DY files"),
         "columns": list(data_cfg["columns"]),
         "dimuon_mass_window": list(data_cfg["dimuon_mass_window"]),
         "split": {
@@ -235,9 +236,9 @@ def _build_config_snapshot(cfg: Mapping[str, Any], shard_spec: ShardSpec) -> Dic
     data_cfg = cfg["data"]
     split_cfg = data_cfg["split"]
     return {
-        "ggH_files": list(data_cfg["ggH_files"]),
-        "VBF_files": list(data_cfg["VBF_files"]),
-        "DY_files": list(data_cfg["DY_files"]),
+        "ggH_files": expand_path_patterns(data_cfg["ggH_files"], strict=True, description="ggH files"),
+        "VBF_files": expand_path_patterns(data_cfg["VBF_files"], strict=True, description="VBF files"),
+        "DY_files": expand_path_patterns(data_cfg["DY_files"], strict=True, description="DY files"),
         "columns": list(data_cfg["columns"]),
         "dimuon_mass_window": list(data_cfg["dimuon_mass_window"]),
         "split": {
@@ -354,7 +355,7 @@ def prepare_token_shards(cfg: Mapping[str, Any], *, force_rebuild: Optional[bool
     np.save(root_dir / "train_masses.npy", train_masses_arr)
 
     metadata = {
-        "version": 2,
+        "version": 3,
         "build_config": _build_config_snapshot(cfg, shard_spec),
         "scaler": scaler.to_dict(),
         "class_weights": class_weights.tolist(),
